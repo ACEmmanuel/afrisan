@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide vertical and horizontal scrollbars */
+/* html, body {
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+  }
+   */
+
+
+@layer components {
+  .modal{
+    @apply container mx-auto absolute w-[100vw] rounded-md left-0 top-0 h-[40vh] bg-[#c0c0cf] text-lg grid place-content-center;
+  }
+
+
+}
+
+
+
+
+
+
+
+/* CSS */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+
+.animate-marquee.paused {
+  animation-play-state: paused;
+}
+
+
