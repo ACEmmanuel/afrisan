@@ -18,8 +18,7 @@ function App() {
     <>
       
       <Featured />
-      <br />
-      <Featured />
+    
 
       
     </>

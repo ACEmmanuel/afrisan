@@ -57,7 +57,7 @@ html, body {
     }
 
     .discount{
-      @apply bg-red-200 text-red-600 font-bold text-[9px] rounded-lg h-fit px-[0.35rem]
+      @apply bg-red-200 text-red-600 font-bold text-[10px] h-fit px-[0.35rem] rounded-lg
     }
 
 }
@@ -88,7 +88,7 @@ html, body {
 
 @layer components {
   .modal{
-    @apply container mx-auto absolute w-[100vw] rounded-md left-0 top-0 h-[40vh] bg-[#c0c0cf] text-lg grid place-content-center;
+    @apply container mx-auto absolute w-[100vw] left-0 top-0 h-[40vh] bg-[#c0c0cf] text-lg grid place-content-center;
   }
 
   .slide::-webkit-scrollbar{

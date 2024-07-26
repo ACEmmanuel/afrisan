@@ -6,10 +6,10 @@ export const feature = [
     {id:'4', img: './Featured/cap2.jpg', name: "Trad Cap", rate: "4.0"},
     {id:'5', img: './Featured/cap5.jpg', name: "Crochet Cap", rate: "3.5"},
     {id:'6', img: './Featured/cream.jpg', name: "Cream", rate: "5.0"},
-    // {id:'7', img: './Featured/shoe.jpg', name: "Blessing", rate: "2.0"},
-    // {id:'8', img: './Featured/shoe2.jpg', name: "Evans", rate: "4.0"},
-    // {id:'9', img: './Featured/shoe3.jpg', name: "ACE King", rate: "3.0"},
-    // {id:'10', img: './Featured/slipper.jpg', name: "Emma", rate: "2.0"},
+    {id:'7', img: './Featured/shoe.jpg', name: "Blessing", rate: "2.0"},
+    {id:'8', img: './Featured/shoe2.jpg', name: "Evans", rate: "4.0"},
+    {id:'9', img: './Featured/shoe3.jpg', name: "ACE King", rate: "3.0"},
+    {id:'10', img: './Featured/slipper.jpg', name: "Emma", rate: "2.0"},
     
     
 ];

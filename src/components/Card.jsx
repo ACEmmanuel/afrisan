@@ -3,12 +3,12 @@ import React from 'react'
 const Card = ({title, image, rate}) => {
   return (
     <>
-      <div className='hover:shadow-lg rounded-[17px] h-auto w-auto p-3 border bg-white'>
+      <div className='hover:shadow-lg w-[117px] h-[181px] lg:w-[193px] lg:h-[263px] p-3 border bg-white'>
 
-        <div className='bg-[#F0EEED] w-full h-[10rem] rounded-[17px] mx-auto'>
-        {/* w-[198px] h-[200px] lg:w-[295px] lg:h-[298px] || lg:w-[180px] lg:h-[180px] || w-[160px] h-[160px] lg:w-[160px] lg:h-[160px]*/}
+        <div className=' w-full h-[20%] mx-auto'>
+        {/* w-[198px] h-[200px] lg:w-[295px] lg:h-[298px] || lg:w-[180px] lg:h-[180px] || w-[160px] h-[160px] lg:w-[160px] lg:h-[160px] || bg-[#F0EEED]*/}
          
-          <img src={image} className='w-full h-full object-cover rounded-[17px] '/>
+          <img src={image} className='object-cover rounded-[17px] '/>
 
         </div>
 
