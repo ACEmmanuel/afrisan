@@ -6,7 +6,7 @@ import Card from '../components/Card.jsx'
 const Featured = () => {
   return (
     <>
-        <div className='container flex justify-around gap-2 w-full mx-auto px-4'>
+        <div className='container flex flex-wrap justify-around gap-2 w-full mx-auto px-4'>
 
             {
             feature.map((e) => {

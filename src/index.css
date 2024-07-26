@@ -19,7 +19,7 @@ html, body {
     /* Card */
 
     .title{
-      @apply font-DM font-bold text-[16px] lg:text-[18px] 
+      @apply font-DM font-bold text-[16px] uppercase
     }
 
     .product-container{
@@ -32,7 +32,7 @@ html, body {
     }
 
     .rate{
-      @apply flex items-end text-black/50 font-medium text-[12px] lg:text-[13px] tracking-tighter
+      @apply flex items-end text-black/50 font-medium text-[11px] tracking-tighter
     }
 
     .rate-score{
@@ -40,7 +40,7 @@ html, body {
     }
 
     .star{
-      @apply flex 
+      @apply flex
     }
 
     /* Price styling */
@@ -49,7 +49,7 @@ html, body {
     }
 
     .price{
-      @apply text-[17px] lg:text-[20px] font-bold
+      @apply text-[16px] font-bold
     }
     
     .discounted{
