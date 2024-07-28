@@ -22,7 +22,7 @@
     /* Card */
 
     .card-container{
-      @apply hover:shadow-lg bg-white min-w-[80px] max-w-[180px] aspect-[1/1.2] overflow-hidden relative
+      @apply hover:shadow-lg bg-white min-w-[80px] max-w-[180px] aspect-[1/1.5] overflow-hidden relative
     }
 
     .title{
@@ -30,12 +30,12 @@
     }
 
     .product-container{
-      @apply py-2 md:py-4 px-3 flex flex-col tracking-tight gap-1
+      @apply pt-4 md:pt-4 px-3 flex flex-col tracking-tight md:gap-1
     }
 
     /* Rate styling */
     .rate-container{
-      @apply flex items-end gap-4
+      @apply flex items-end gap-3 md:gap-4
     }
     
     .rate{
