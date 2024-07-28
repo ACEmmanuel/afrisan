@@ -1,9 +1,9 @@
 export const feature = [
 
-    {id:'1', img: './Featured/bag.jpg', name: "travelling Bag", rate: "2.0",},
+    {id:'1', img: './Featured/cap3.jpg', name: "travelling Bag", rate: "2.0",},
     {id:'2', img: './Featured/bag4.jpg', name: "School Bag", rate: "2.0"},
     {id:'3', img: './Featured/cap.jpg', name: "Face Cap", rate: "5.0"},
-    {id:'4', img: './Featured/cap2.jpg', name: "Trad Cap", rate: "4.0"},
+    {id:'4', img: './Featured/shoe3.jpg', name: "Trad Cap", rate: "4.0"},
     {id:'5', img: './Featured/cap5.jpg', name: "Crochet Cap", rate: "3.5"},
     {id:'6', img: './Featured/cream.jpg', name: "Cream", rate: "5.0"},
     // {id:'7', img: './Featured/shoe.jpg', name: "Blessing", rate: "2.0"},

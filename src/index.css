@@ -10,8 +10,8 @@
   }
 */
 
-html, body {
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
 
@@ -21,21 +21,25 @@ html, body {
 
     /* Card */
 
+    .card-container{
+      @apply hover:shadow-lg bg-white min-w-[85px] max-w-[180px] aspect-[1/1.5] overflow-hidden relative
+    }
+
     .title{
       @apply font-DM font-bold text-[16px] uppercase
     }
 
     .product-container{
-      @apply  p-2 flex flex-col tracking-tight gap-1
+      @apply p-3 lg:p-3 flex flex-col tracking-tight gap-1
     }
 
-    /* Rating styling */
+    /* Rate styling */
     .rate-container{
       @apply flex items-end gap-4
     }
-
+    
     .rate{
-      @apply flex items-end text-black/50 font-medium text-[11px] tracking-tighter
+      @apply flex items-end text-black/80 font-medium text-[12px] tracking-tighter
     }
 
     .rate-score{
@@ -52,20 +56,24 @@ html, body {
     }
 
     .price{
-      @apply text-[16px] font-bold
+      @apply text-[16px] lg:text-[18px] font-bold
     }
     
-    .discounted{
+    .discount{
       @apply text-black/40 line-through decoration-black/35
     }
 
-    .discount{
-      @apply bg-red-200 text-red-600 font-bold text-[10px] h-fit px-[0.35rem] rounded-lg
+    .percentage{
+      @apply bg-orange-200 text-orange-600 font-bold text-[12px] h-fit px-[0.35rem] rounded-sm absolute top-2 left-2
     }
 
     
 
 }
+
+
+
+
 
 
 

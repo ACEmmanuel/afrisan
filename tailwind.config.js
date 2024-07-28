@@ -10,6 +10,7 @@ export default {
         "radio" : ["Radio Canada Big", "sans-serif"],
         "DM" : ["DM Sans", "sans-serif"],
         "mont": ["Montserrat", "sans-serif"],
+        "IBM": ["IBM Plex Sans", "sans-serif"],
       },
 
 

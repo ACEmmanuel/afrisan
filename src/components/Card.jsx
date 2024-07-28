@@ -3,9 +3,9 @@ import React from 'react'
 const Card = ({title, image, rate}) => {
   return (
     <>
-      <div className='hover:shadow-lg border bg-white min-h-[140px] min-w-[90px] max-h-[200px] max-w-[180px] '>
+      <div className='card-container'>
 
-        <div className='h-[50%] mx-auto border'>
+        <div className='h-[60%] mx-auto'>
          
           <img src={image} className='object-cover w-full h-full '/>
 
@@ -61,14 +61,14 @@ const Card = ({title, image, rate}) => {
           <div className='price-container'>
 
             <p className='price'>$125</p>
-            <p className='price discounted'>$235</p>
-            <p className='discount'>30%</p>
+            <p className='price discount'>$235</p>
 
           </div>
          
 
         </div>
 
+        <p className='percentage'>30%</p>
 
       </div>
 
