@@ -5,7 +5,7 @@ const Card = ({title, image, rate}) => {
     <>
       <div className='card-container'>
 
-        <div className='h-[60%] mx-auto'>
+        <div className='h-[45%] md:h-[50%] mx-auto'>
          
           <img src={image} className='object-cover w-full h-full '/>
 
@@ -17,8 +17,16 @@ const Card = ({title, image, rate}) => {
           <p className='title'>{title}</p>
 
 
+          {/* Price section */}
+          <div className='price-container'>
+            <p className='price'>$125</p>
+            <p className='price discount'>$235</p>
+          </div>
+
+        
           {/* Rating */}
           <div className='rate-container'>
+
 
             {/* stars */}
             <span className='star'>
@@ -57,13 +65,7 @@ const Card = ({title, image, rate}) => {
           </div>
 
 
-          {/* Price section */}
-          <div className='price-container'>
-
-            <p className='price'>$125</p>
-            <p className='price discount'>$235</p>
-
-          </div>
+         
          
 
         </div>
