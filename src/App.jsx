@@ -7,6 +7,8 @@ import React from 'react'
 
 // COMPONENTS
 import Header from './components/Header.jsx'
+import Test1 from './components/Test1.jsx'
+import Headercopy from './components/Headercopy.jsx'
 import Featured from './components/Featured.jsx'
 import Hero from './components/Hero.jsx'
 import Test2 from './Test2.jsx'
@@ -17,8 +19,13 @@ function App() {
  return ( 
     <>
       
+      <Header />
       <Featured />
-    
+      <Featured />
+      {/* <Headercopy />  */}
+      {/* <Test2 /> */}
+      {/* <Test1 /> */}
+
 
       
     </>
