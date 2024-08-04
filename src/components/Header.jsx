@@ -97,7 +97,7 @@ const Header = () => {
   
   return (
     <>
-        <header className='font-IBM bg-orange-500 p-6 relative text-slate-100 mb-10'>
+        <header className='font-IBM bg-orange-500 p-5 relative text-slate-100 mb-10 z-10'>
           <div className='mx-auto flex justify-between items-center gap-5'>
 
             {/* Logo */}
@@ -179,7 +179,7 @@ const Header = () => {
               <div className={`fixed top-0 right-0 w-[85vw] h-full bg-slate-600 transform transition-transform duration-[400ms]  ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} p-5 shadow-lg`} ref={menuRef}>
                 
                 {/*Close Button */}
-                <span className='font-bold cursor-pointer flex items-center gap-2' onClick={()=>closeMenu()}>
+                <span className='font-bold cursor-pointer flex items-center gap-2 w-fit' onClick={()=>closeMenu()}>
                 <svg className={`size-[1rem]`} fill='white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
                 </svg>
