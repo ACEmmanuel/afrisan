@@ -22,9 +22,7 @@ function App() {
       <Header />
       <Featured />
       <Featured />
-      {/* <Headercopy />  */}
-      {/* <Test2 /> */}
-      {/* <Test1 /> */}
+      
 
 
       
