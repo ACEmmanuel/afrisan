@@ -195,7 +195,7 @@ const Header = () => {
                       <input 
                       type="text" 
                       placeholder="Search..." 
-                      className="bg-white text-white w-full p-3 outline-none"
+                      className="bg-slate-100 text-black w-full p-3 outline-none"
                       />
                       <div className='absolute top-0 right-0 bg-orange-500 p-5 h-[3rem] grid place-content-center'>
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
