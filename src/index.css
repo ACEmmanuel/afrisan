@@ -22,11 +22,11 @@
     /* Card */
 
     .card-container{
-      @apply hover:shadow-lg bg-white min-w-[80px] max-w-[180px] aspect-[1/1.5] overflow-hidden relative
+      @apply hover:shadow-lg min-w-[80px] max-w-[180px] aspect-[1/1.5] p-1 rounded-md overflow-hidden relative
     }
 
     .title{
-      @apply font-DM font-bold text-[12px] md:text-[14px] uppercase tracking-tight leading-4
+      @apply font-DM font-bold text-[14px] md:text-[14px] uppercase tracking-tight leading-4
     }
 
     .product-container{
@@ -47,7 +47,7 @@
     }
 
     .star{
-      @apply flex
+      @apply flex mt-2
     }
 
     /* Price styling */
@@ -69,7 +69,30 @@
 
     
 
+
+
+
+    .contact{
+      @apply text-[13px] lg:text-[14px] leading-[3]
+    }
+
+    .footer-head{
+      @apply 
+    }
+
+
+    .input{
+      @apply rounded-full w-[90%] lg:w-full max-w-[30rem] h-[3rem] outline-none text-black pl-3 overflow-hidden;
+  }
+
+  .search{
+      @apply absolute h-full top-0 right-0 rounded-full text-white bg-orange-600 px-[3rem] py-[1rem];
+  }
+
 }
+
+
+
 
 
 
