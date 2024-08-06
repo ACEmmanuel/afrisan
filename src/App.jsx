@@ -9,7 +9,7 @@ import React from 'react'
 import Header from './components/Header.jsx'
 import Featured from './components/Featured.jsx'
 import Hero from './components/Hero.jsx'
-import Footer from './components/Footer.jsx' 
+import Footer from './components/Footer.jsx'
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
       <Header />
       <Featured />
       <Featured />
+      <Footer />
       
 
 
@@ -28,6 +29,29 @@ function App() {
 }
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // STARS
