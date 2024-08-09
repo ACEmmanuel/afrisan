@@ -1,10 +1,10 @@
 import React from "react";
 
-const SearchBar = ({size}) => {
+const SearchBar = ({size, width, text}) => {
   return (
     <>
       <div className= {`flex items-center justify-center w-full p-2 ${size}`} >
-        <div className="relative flex w-full" style={{ maxWidth: "100%" }}>
+        <div className="relative flex w-full" style={{ maxWidth: width }}>
           <span className="absolute inset-y-0 left-0 flex items-center pl-3">
             <svg
               className="w-6 h-6 text-gray-500"
@@ -24,7 +24,7 @@ const SearchBar = ({size}) => {
           <input
             type="text"
             placeholder="Search products, brands and categories"
-            className="pl-12 pr-4 py-2 w-full border rounded-full text-gray-700 focus:outline-none focus:border-gray-400"
+            className={`pl-12 pr-4 py-4 w-full border rounded-full text-gray-700 focus:outline-none focus:border-gray-400 ${text}`}
           />
         </div>
       </div>
@@ -32,13 +32,7 @@ const SearchBar = ({size}) => {
   );
 };
 
-SearchBar.propTypes = {
-    size: PropTypes.string,
-  };
-  
-  SearchBar.defaultProps = {
-    size: "block", 
-  };
 
+  
 
 export default SearchBar;
