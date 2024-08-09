@@ -22,7 +22,5 @@ dist-ssr
 *.sln
 *.sw?
 
-Test2.jsx
 
-Headercopy.jsx
-Test1.jsx
+Test.jsx
