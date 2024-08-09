@@ -1,5 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 
+import SearchBar from './SearchBar';
+
 const Header = () => {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState({account: false, help: false});
@@ -97,11 +99,20 @@ const Header = () => {
   
   return (
     <>
-        <header className='font-IBM bg-orange-500 p-5 relative text-slate-100 mb-10 z-10'>
+        <header className='font-IBM bg-orange-500 p-5 relative text-slate-100 mb-2 z-10'>
           <div className='mx-auto flex justify-between items-center gap-5'>
 
+            {/* Menu Icon */}
+            <div className="md:hidden flex items-center" >
+                <button className="text-white" onClick={()=>openMenu()}>
+                  <svg className={`w-6 h-6 transition-transform transform ${isMenuOpen? 'rotate-90' : ''} `} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+                </button>
+              </div>
+
             {/* Logo */}
-            <div className="text-2xl font-bold">Afrisan</div>
+            <div className="text-[20px] tracking- leading-5 font-bold">Afrisan</div>
 
             {/* Search Bar */}
             <div className="hidden md:flex flex-1 space-x-5 items-center px-[4rem] relative overflow-hidden">
@@ -154,10 +165,11 @@ const Header = () => {
                 )}
               </div>
             </div>
+            
            
+            {/* Mobile Menu */}
 
-
-            {/* Mobile Icon with Cart Icon and Slide in Menu box*/}
+            {/*Cart Icon and Slide in Menu box*/}
             <div className='flex gap-5'>
               <div className={`text-white font-bold`}>
                 {/* Cart Icon*/}
@@ -166,17 +178,9 @@ const Header = () => {
                 </svg>
               </div>
               
-              {/* Menu Icon */}
-              <div className="md:hidden flex items-center" >
-                <button className="text-white" onClick={()=>openMenu()}>
-                  <svg className={`w-6 h-6 transition-transform transform ${isMenuOpen? 'rotate-90' : ''} `} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                  </svg>
-                </button>
-              </div>
               
               {/* Actual Menu Slide-in Box*/}
-              <div className={`fixed top-0 right-0 w-[85vw] h-full bg-slate-600 transform transition-transform duration-[400ms]  ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} p-5 shadow-lg`} ref={menuRef}>
+              <div className={`fixed top-0 left-0 w-[85vw] h-full bg-slate-600 transform transition-transform duration-[400ms]  ${isMenuOpen ? '-translate-x-0' : '-translate-x-full'} p-5 shadow-lg`} ref={menuRef}>
                 
                 {/*Close Button */}
                 <span className='font-bold cursor-pointer flex items-center gap-2 w-fit' onClick={()=>closeMenu()}>
@@ -189,21 +193,7 @@ const Header = () => {
 
                 {/* Account and Menu Section */}
                 <div className='flex flex-col gap-5 mt-14'>
-                  {/* Search Bar */}
-                  <div className="items-center relative overflow-hidden rounded">
-                    <div className='flex-grow'>
-                      <input 
-                      type="text" 
-                      placeholder="Search..." 
-                      className="bg-slate-100 text-black w-full p-3 outline-none"
-                      />
-                      <div className='absolute top-0 right-0 bg-orange-500 p-5 h-[3rem] grid place-content-center'>
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35m1.29-5.16A7.5 7.5 0 1011.5 19 7.5 7.5 0 0018 12.5z"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
+                 
                   {/* Account */}
                     <div className='relative text-[20px] font-bold mt-5' onClick={()=>dropDownMobile('account')} ref={mobileAccountRef}>
                       <button className='flex items-center gap-1'>
@@ -238,17 +228,17 @@ const Header = () => {
                     </div>
 
                 </div>
-                
-                
-
-              
-
-
+  
               </div>   {/* Actual Menu Slide-in Box CLOSE*/}   
             </div> {/* Mobile Icon with Cart Icon and Slide in Menu box CLOSE*/}
 
+
           </div>
         </header>
+        
+         {/* Search Bar */}
+         <SearchBar size="block md:hidden" />
+
 
         
         

@@ -11,17 +11,20 @@ import Featured from './components/Featured.jsx'
 import Hero from './components/Hero.jsx'
 import Footer from './components/Footer.jsx'
 
+
 function App() {
 
  return ( 
     <>
       
       <Header />
+      {/* <Featured />
       <Featured />
-      <Featured />
-      <Footer />
+      <Footer /> */}
       
 
+
+        {/* <Test /> */}
 
       
     </>
