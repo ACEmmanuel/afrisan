@@ -99,14 +99,14 @@ const Header = () => {
   
   return (
     <>
-        <header className='font-IBM bg-orange-500 p-5 relative text-slate-100 mb-2 z-10'>
+        <header className='font-IBM bg-orange-500 p-5 relative text-slate-100 mb-1 z-10'>
           <div className='mx-auto flex justify-between items-center gap-5'>
 
             {/* Menu Icon */}
             <div className="md:hidden flex items-center" >
                 <button className="text-white" onClick={()=>openMenu()}>
-                  <svg className={`w-6 h-6 transition-transform transform ${isMenuOpen? 'rotate-90' : ''} `} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  <svg className={`size-6 transition-transform transform ${isMenuOpen? 'rotate-90' : ''} `} fill="white" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
                   </svg>
                 </button>
               </div>
@@ -115,7 +115,7 @@ const Header = () => {
             <div className="text-[20px] tracking- leading-5 font-bold">Afrisan</div>
 
             {/* Search Bar */}
-            <SearchBar size="hidden md:flex" text="text-[16px] leading-5 tracking-tight" width='90%' />
+            <SearchBar size="hidden md:flex" text="text-[16px] leading-5 tracking-tight py-4" width='90%' />
 
 
             <div className='gap-5 hidden md:flex'>
@@ -161,14 +161,14 @@ const Header = () => {
             
               <div className={`text-white font-bold`}>
                 {/* Cart Icon*/}
-                <svg className='size-[1.4rem]' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <svg className='size-[1.3rem] md:size-[1.4rem]' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                   <path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
                 </svg>
               </div>
 
               {/* Account Icon */}
               <div>
-                <svg className='size-[1.4rem] md:hidden' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <svg className='size-[1.3rem] md:hidden' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
                 </svg>
               </div>
@@ -232,7 +232,7 @@ const Header = () => {
         </header>
         
          {/* Search Bar */}
-         <SearchBar size="block md:hidden" width="100%" text="text-[14px] leading-5 tracking-tight" />
+         <SearchBar size="block md:hidden" width="100%" text="text-[14px] leading-5 tracking-tight py-3" />
 
 
         
