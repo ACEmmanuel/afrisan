@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBar = ({size, width, text}) => {
+const SearchBar = ({size, width, input}) => {
   return (
     <>
       <div className= {`flex items-center justify-center w-full p-2 ${size}`} >
@@ -24,7 +24,7 @@ const SearchBar = ({size, width, text}) => {
           <input
             type="text"
             placeholder="Search products, brands and categories"
-            className={`pl-12 pr-4 w-full border rounded-full text-gray-700 focus:outline-none focus:border-gray-400 ${text}`}
+            className={`pl-12 pr-4 w-full border rounded-full text-gray-700 focus:outline-none focus:border-gray-400 ${input}`}
           />
         </div>
       </div>

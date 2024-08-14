@@ -68,12 +68,27 @@
     }
 
     
+    /* Product Page Style */
+    .display-img{
+      @apply size-[3rem] aspect-square bg-gray-200 
+    }
+
+    .small-box {
+      @apply w-16 h-16 bg-gray-200 mr-2
+    }
+    
+    .small-box:last-child {
+      @apply mr-0;
+    }
+    
+    /* Adjust spacing for mobile screens (sm) */
+ 
+    
 
 
-
-
+    /* Footer Style */
     .contact{
-      @apply text-[13px] lg:text-[14px] leading-[3]
+      @apply text-[14px] leading-[2]
     }
 
     .footer-head{
@@ -82,11 +97,11 @@
 
 
     .input{
-      @apply rounded-full w-[90%] lg:w-full max-w-[30rem] h-[3rem] outline-none text-black pl-3 overflow-hidden;
+      @apply rounded-full w-[90%] lg:w-full max-w-[30rem] h-[3rem] outline-none text-black pl-7;
   }
 
   .search{
-      @apply absolute h-full top-0 right-0 rounded-full text-white bg-orange-600 px-[3rem] py-[1rem];
+      @apply absolute grid place-content-center h-full top-0 right-0 rounded-full text-white bg-orange-600 px-[3rem] py-[1rem];
   }
 
 }
@@ -95,71 +110,5 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@layer components {
-  .modal{
-    @apply container mx-auto absolute w-[100vw] left-0 top-0 h-[40vh] bg-[#c0c0cf] text-lg grid place-content-center;
-  }
-
-  .slide::-webkit-scrollbar{
-    display: none;
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CSS */
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
-
-.animate-marquee {
-  animation: marquee 10s linear infinite;
-}
-
-.animate-marquee.paused {
-  animation-play-state: paused;
-}
 
 

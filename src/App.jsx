@@ -8,8 +8,10 @@ import React from 'react'
 // COMPONENTS
 import Header from './components/Header.jsx'
 import Featured from './components/Featured.jsx'
+import ProductPage from './components/ProductPage'
 import Hero from './components/Hero.jsx'
 import Footer from './components/Footer.jsx'
+
 
 
 function App() {
@@ -17,14 +19,12 @@ function App() {
  return ( 
     <>
       
-      <Header />
-      {/* <Featured />
-      <Featured />
-      <Footer /> */}
       
 
-
-        {/* <Test /> */}
+        <Header />
+        <Featured />
+        <ProductPage />
+        <Footer />
 
       
     </>
