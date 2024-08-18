@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Featured from './components/Featured'
+
+
 
 function App() {
 
  return ( 
     <>
+      
       <Header />
-      <main className='font-IBM font-bold mx-auto w-fit mt-[7rem] text-[2rem] animate-pulse mb-[10rem]'>
-        <Link to="/featured">Click ME</Link>
-      </main>
+      <Featured />
       <Footer />
     </>
   )

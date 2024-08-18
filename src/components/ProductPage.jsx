@@ -2,6 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import { useParams } from "react-router-dom";
 import { feature } from "../data";
 
+import Stars from "./Stars";
+
 // I know the code is an eyesore, and i don't know what the fuck is going on 
 
 const ProductPage = () => {
@@ -18,95 +20,134 @@ const ProductPage = () => {
 
   return (
     <>
-    <div className="max-w-screen-xl mx-auto p-4 md:px-10 font-IBM ">
-      
-      {/* Container for images, details, and delivery */}
-      <div className="flex flex-col gap-10 lg:flex-row">
-        
-        {/* Image section */}
-        <div className="w-full max-w-[24rem] lg:w-1/3 mx-auto">
-          <div className="size-[18rem] sm:size-[18rem] lg:size-[18rem] bg-gray-200 mx-auto" >
-            <img className="size-full object-cover" src={img}/>
-          </div>
-          <div className="flex justify-between mt-5" >
-            <div className="small-box"></div>
-            <div className="small-box"></div>
-            <div className="small-box"></div>
-            <div className="small-box"></div>
-          </div>
-        </div>
+      <section class="py-2 sm:py-2 font-IBM"> 
+        <div class="container mx-auto px-4">
+            
+            <div class="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
+            <div class="lg:col-span-3 lg:row-end-1">
+              <div class="lg:flex lg:items-start">
+                <div class="lg:order-2 lg:ml-5">
+                    <div class="size-[18rem] sm:size-[18rem] lg:size-[18rem] mx-auto overflow-hidden rounded-lg">
+                        <img class="h-full w-full max-w-full object-cover bg-no-repeat" src={img} alt="water man" />
+                    </div>
+                </div>
 
-        {/* Details section */}
-        <div className="w-full max-w-xs lg:w-1/3 mt-4 md:mt-0 mx-auto" >
-          <h1 className="text-[1.25rem] font-bold">{name}</h1>
-          <div className="flex items-center mt-2">
-            <span className="text-yellow-500 text-sm">⭐⭐⭐⭐⭐</span>
-            <span className="ml-2 text-gray-600 text-sm">4.5/5</span>
-          </div>
-          <div className="flex items-center mt-2">
-            <span className="text-lg font-bold">$260</span>
-            <span className="text-gray-400 ml-2 line-through text-lg">$300</span>
-          </div>
-          <p className="mt-2 text-gray-600 text-sm leading-[1.2]">
-            This graphic t-shirt is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.
-          </p>
-          <div className="mt-4">
-            <h3 className="font-semibold text-sm border-t pt-4">Select Colors</h3>
-            <div className="flex items-center mt-2">
-              <div className="w-6 h-6 rounded-full bg-gray-800"></div>
-              <div className="w-6 h-6 rounded-full bg-green-700 ml-2"></div>
-              <div className="w-6 h-6 rounded-full bg-blue-700 ml-2"></div>
+                <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0 flex justify-center lg:justify-start ">
+                    <div class="flex flex-row items-start lg:flex-col">
+                      <button type="button" class=" aspect-square mb-3 h-20 overflow-hidden rounded-lg text-center mx-3">
+                          <img class="h-full w-full object-cover" src={img} alt="" />
+                      </button>
+                      <button type="button" class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg  text-center mx-3">
+                          <img class="h-full w-full object-cover" src={img} alt="" />
+                      </button>
+                      <button type="button" class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg text-center mx-3">
+                          <img class="h-full w-full object-cover" src={img} alt="" />
+                      </button>
+                    </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="mt-4">
-            <h3 className="font-semibold text-sm border-t pt-4">Choose Size</h3>
-            <div className="flex items-center mt-2 space-x-2">
-              <button className="px-3 py-1 border border-gray-300 text-sm rounded-full">Small</button>
-              <button className="px-3 py-1 border border-gray-300 text-sm rounded-full">Medium</button>
-              <button className="px-3 py-1 border border-gray-300 bg-black text-white text-sm rounded-full">Large</button>
-              <button className="px-3 py-1 border border-gray-300 text-sm rounded-full">XLarge</button>
-            </div>
-          </div>
-          <div className="flex items-center gap-5 mt-4 text-sm w-fit">
-            <button className="bg-gray-200 hover:bg-gray-400 px-3 rounded-l-full text-xl" >-</button>
-            <span className="text-sm">1</span>
-            <button className="bg-gray-200 hover:bg-gray-400 px-3 rounded-r-full text-xl">+</button>
-          </div>
-         
-          <button className="w-fit mt-4 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full" 
-          >
-            Add to Cart 
-          </button>
-        </div>
 
-        {/* Delivery & Returns Section */}
-        <div className="w-full max-w-xs lg:w-1/3 bg-gray-100 rounded mt-4 md:mt-0 mx-auto" >
-          <div className="">
-            <h3 className="font-bold text-[1.25rem]">DELIVERY & RETURNS</h3>
-            <p className="text-xs text-gray-500">Free delivery on thousands of products in Lagos, Ibadan & Abuja</p>
-          </div>
-          <div className="mt-4">
-            <h4 className="font-semibold text-sm upper">Choose your location</h4>
-            <select className="w-full p-2 border border-gray-300 mt-2 outline-none text-sm">
-              <option>Lagos</option>
-              <option>Lagos</option>
-              <option>Lagos</option>
-            </select>
-            <select className="w-full p-2 border border-gray-300 mt-2 outline-none text-sm">
-              <option>LEKKI-AJAH (SANGOTEDO)</option>
-            </select>
-          </div>
-          <div className="mt-4">
-            <h4 className="font-semibold text-sm">Pickup Station</h4>
-            <p className="text-xs text-gray-500">Delivery Fees ₦ 600</p>
-            <p className="text-xs text-gray-500">Arriving at pickup station between 13 August & 14 August when you order within next 14 mins</p>
-            <h4 className="font-semibold text-sm mt-4">Door Delivery</h4>
-            <p className="text-xs text-gray-500">Delivery Fees ₦ 990</p>
-            <p className="text-xs text-gray-500">Ready for delivery between 13 August & 14 August when you order within next 14 mins</p>
-          </div>
+            <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
+                <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">{name}</h1>
+
+                <div class="mt-5 flex items-center">
+                <div class="flex items-center">
+                    <Stars />
+                </div>
+                <p class="ml-2 text-sm font-medium text-gray-500">1,209 Reviews</p>
+                </div>
+
+                <h2 class="mt-8 text-base text-gray-900">Coffee Type</h2>
+                <div class="mt-3 flex select-none flex-wrap items-center gap-1">
+                <label class="">
+                    <input type="radio" name="type" value="Powder" class="peer sr-only" checked />
+                    <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">Powder</p>
+                </label>
+                <label class="">
+                    <input type="radio" name="type" value="Whole Bean" class="peer sr-only" />
+                    <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">Whole Bean</p>
+                </label>
+                <label class="">
+                    <input type="radio" name="type" value="Groud" class="peer sr-only" />
+                    <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">Groud</p>
+                </label>
+                </div>
+
+                <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
+                <div class="mt-3 flex select-none flex-wrap items-center gap-1">
+                <label class="">
+                    <input type="radio" name="subscription" value="4 Months" class="peer sr-only" />
+                    <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">4 Months</p>
+                    <span class="mt-1 block text-center text-xs">$80/mo</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="subscription" value="8 Months" class="peer sr-only" checked />
+                    <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">8 Months</p>
+                    <span class="mt-1 block text-center text-xs">$60/mo</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="subscription" value="12 Months" class="peer sr-only" />
+                    <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">12 Months</p>
+                    <span class="mt-1 block text-center text-xs">$40/mo</span>
+                </label>
+                </div>
+
+                <div class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
+                <div class="flex items-end">
+                    <h1 class="text-3xl font-bold">$60.50</h1>
+                    <span class="text-base">/month</span>
+                </div>
+
+                <button type="button" class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    Add to cart
+                </button>
+                </div>
+
+                <ul class="mt-8 space-y-2">
+                <li class="flex items-center text-left text-sm font-medium text-gray-600">
+                    <svg class="mr-2 block h-5 w-5 align-middle text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" class=""></path>
+                    </svg>
+                    Free shipping worldwide
+                </li>
+
+                <li class="flex items-center text-left text-sm font-medium text-gray-600">
+                    <svg class="mr-2 block h-5 w-5 align-middle text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" class=""></path>
+                    </svg>
+                    Cancel Anytime
+                </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-3">
+                <div class="border-b border-gray-300">
+                <nav class="flex gap-4">
+                    <a href="#" title="" class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Description </a>
+
+                    <a href="#" title="" class="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600">
+                    Reviews
+                    <span class="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100"> 1,209 </span>
+                    </a>
+                </nav>
+                </div>
+
+                <div class="mt-8 flow-root sm:mt-12">
+                <h1 class="text-3xl font-bold">Delivered To Your Door</h1>
+                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium nesciunt fuga.</p>
+                <h1 class="mt-8 text-3xl font-bold">From the Fine Farms of Brazil</h1>
+                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam enim facere.</p>
+                <p class="mt-4">Amet consectetur adipisicing elit. Optio numquam enim facere. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum nostrum eius facere, ad neque.</p>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
+
     </>
   );
 };

@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import Stars from './Stars';
+
 const Card = ({title, image, rate}) => {
   return (
     <>
       <div className='card-container'>
 
-        <div className='h-[55%] md:h-[60%] mx-auto'>
+        <div className='h-[55%] mx-auto'>
          
-          <img src={image} className='object-cover w-full h-full rounded-md'/>
+          <img src={image} className='object-cover w-full h-full'/>
 
         </div>
 
@@ -28,50 +30,19 @@ const Card = ({title, image, rate}) => {
           {/* Rating */}
           <div className='rate-container'>
 
-
             {/* stars */}
             <span className='star'>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC633" width="17px" height="17px">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC633" width="17px" height="17px">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC633" width="17px" height="17px">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC633" width="17px" height="17px">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC633" width="17px" height="17px">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-
+              <Stars />
             </span>
 
-            <span className='rate'>
-              <p className='rate-score'>{rate}/</p> 5
-            </span>
+            <p className='rate-score'>{rate}</p> 
 
           </div>
-
-
-         
-         
-
-        </div>
+        
 
         <p className='percentage'>30%</p>
+        </div>
+
 
       </div>
 
