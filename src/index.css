@@ -96,6 +96,7 @@
     }
 
 
+
     .input{
       @apply rounded-full w-[90%] lg:w-full max-w-[30rem] h-[3rem] outline-none text-black pl-7;
   }

@@ -1,24 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-
-
-// COMPONENTS
-
-import Featured from './components/Featured.jsx'
-
-
-
-
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 function App() {
 
  return ( 
     <>
-      <main className='font-IBM font-bold mx-auto w-fit mt-10 text-[2rem]'>
-        <Link to="/featured">Go to featured</Link>
+      <Header />
+      <main className='font-IBM font-bold mx-auto w-fit mt-[7rem] text-[2rem] animate-pulse mb-[10rem]'>
+        <Link to="/featured">Click ME</Link>
       </main>
+      <Footer />
     </>
   )
 }
