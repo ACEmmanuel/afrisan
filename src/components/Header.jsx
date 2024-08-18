@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 
 import SearchBar from './SearchBar';
+import DashboardSidebar from '../DashboardSidebar';
 
 const Header = () => {
 
@@ -112,7 +113,7 @@ const Header = () => {
               </div>
 
             {/* Logo */}
-            <div className="text-[20px] tracking- leading-5 font-medium">Afrisan</div>
+            <div className="text-[1.5rem] tracking- leading-5 font-medium">Afrisan</div>
 
             {/* Search Bar */}
             <SearchBar size="hidden md:flex" input="text-[16px] leading-5 tracking-tight py-4" width='95%' />
@@ -178,44 +179,25 @@ const Header = () => {
               
               
               {/* Actual Slide-in Box*/}
-              <div className={`fixed top-0 left-0 w-[85vw] h-full bg-slate-600 transform transition-transform duration-[400ms]  ${isMenuOpen ? '-translate-x-0' : '-translate-x-full'} shadow-lg`} ref={menuRef}>
+              <div className={`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transform transition-transform duration-[400ms] ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} bg-white dark:bg-gray-800 shadow-lg w-[85vw]`} ref={menuRef}>
                 
+
                 {/*Close Button */}
-                <span className='font-bold cursor-pointer m-5 flex items-center gap-2 w-fit' onClick={()=>closeMenu()}>
-                <svg className={`size-[1.4rem] text-gray-800 dark:text-white transition-transform transform ${isMenuOpen ? '' : 'rotate-90'} `} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
-                </svg>
+                <div className='flex justify-between items-center my-5 px-1'>
+                  <div className="text-[1.5rem] tracking- leading-5 font-medium">Afrisan</div>
 
-                {/* <span className=' text-[14px]'>close</span> */}
+                  <span className='font-bold cursor-pointer items-center gap-2 w-fit p-1 hover:bg-gray-700 hover:text-gray-900 rounded-lg text-sm inline-flex ' onClick={()=>closeMenu()}>
+                  
+                  <svg className={`size-[1.4rem] text-gray-800 dark:text-white transition-transform transform ${isMenuOpen ? '' : 'rotate-90'} `} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                  </svg>
+
                 </span>
-
-
-                {/* Account and Menu Section */}
-                <div className='flex flex-col  mt-10 p-1'>
-                 
-                  {/* Account */}
-                  <div className='flex flex-col'>
-                    <div className='font-IBM font-medium text-right'>      
-                      <span className=' font-bold text-[12px] mr-5 uppercase text-slate-200'>Account</span>
-                      <div className='flex flex-col divide-y divide-slate-500 border-t-[1px] border-slate-500 text-[14px] leading-[2.5rem] text-left'>
-                        <a className='hover:bg-orange-400 hover:text-slate-100 px-2'>Profile</a>
-                        <a className='hover:bg-orange-400 hover:text-slate-100 px-2'>Settings</a>
-                        <a className='hover:bg-orange-400 hover:text-slate-100 px-2'>Logout</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Help */}
-                  <div className='flex flex-col'>
-                    <div className='font-IBM font-medium text-right'>      
-                      <span className=' font-bold text-[12px] mr-5 uppercase text-slate-200'>Help</span>
-                      <div className='flex flex-col divide-y divide-slate-500 border-t-[1px] border-slate-500 text-[14px] leading-[2.5rem] text-left'>
-                        <a className='hover:bg-orange-400 hover:text-slate-100 px-2'>FAQ</a>
-                        <a className='hover:bg-orange-400 hover:text-slate-100 px-2'>Contact Support</a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                
+
+
+                  <DashboardSidebar />
   
 
               </div>   {/* Actual Menu Slide-in Box CLOSE*/}   
