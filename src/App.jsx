@@ -1,16 +1,14 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
 
 // COMPONENTS
-import Header from './components/Header.jsx'
+
 import Featured from './components/Featured.jsx'
-import ProductPage from './components/ProductPage'
-import Hero from './components/Hero.jsx'
-import Footer from './components/Footer.jsx'
+
+
 
 
 
@@ -18,15 +16,9 @@ function App() {
 
  return ( 
     <>
-      
-      
-
-        <Header />
-        <Featured />
-        <ProductPage />
-        <Footer />
-
-      
+      <main className='font-IBM font-bold mx-auto w-fit mt-10 text-[2rem]'>
+        <Link to="/featured">Go to featured</Link>
+      </main>
     </>
   )
 }

@@ -6,30 +6,30 @@ const Footer = () => {
         <div className='bg-[#1A1C2C]'>
             <div className='container mx-auto text-white/90 mt-7 font-IBM divide-y-[1px] divide-slate-700'>
 
-                <div className='mx-auto flex flex-col lg:flex-row items-start flex-nowrap gap-8 px-5 py-10 font-medium text-[15px]'>
+                <div className='mx-auto flex flex-col lg:flex-row items-start flex-nowrap gap-8 px-5 py-10 font-medium text-[14px]'>
                     <div className='lg:w-[33%]'>
-                        <h1 className='font-medium text-[1.5rem] lg:text-[2rem]'>AFRISAN</h1>
-                        <p className='max-w-[40rem] font-normal pr-3 leading-[1.5] text-[14px]'>Reinventing the way of creating websites, we aim to create the most master-paced WordPress theme available on the market.</p>
+                        <h1 className='font-bold text-[1.25rem] lg:text-[1.5rem]'>AFRISAN</h1>
+                        <p className='max-w-[40rem] font-normal pr-3 text-[0.875rem]'>Reinventing the way of creating websites, we aim to create the most master-paced WordPress theme available on the market.</p>
                     </div>
 
-                    <div className='leading-[3] lg:w-[33%]'>
-                        <p className='text-lg font-bold'>CONTACT US</p>
-                        <p className='contact'>202 Helga Springs Rd, Crawforss, TN 38554</p>
-                        <p className='contact'>Call Us: <span>800.275.8777</span></p>
-                        <p className='contact'>alex@company.com</p>
-                    </div>
-                    
                     <div className='flex flex-col lg:w-[33%]'>
                         <p className='text-lg font-bold'>SIGN UP FOR EMAIL UPDATES</p>
-                        <p className='text-[14px] leading-[1.5rem]'>Sign up with your email address to receive news and updates</p>
+                        <p className='text-[0.875rem]'>Sign up with your email address to receive news and updates</p>
                         <div className='relative mt-5'>  
                             <input className='input'/>
                             <div className='search'>Subscribe</div>
                         </div>
                     </div>
+
+                    <div className=' lg:w-[33%]'>
+                        <p className='text-lg font-bold'>CONTACT US</p>
+                        <p className='contact'>202 Helga Springs Rd, Crawforss, TN 38554</p>
+                        <p className='contact'>Call Us: <span>800.275.8777</span></p>
+                        <p className='contact'>alex@company.com</p>
+                    </div>
                 </div>
 
-            <div className='w-[100%] mx-auto py-6'>
+            <div className='w-[100%] mx-auto py-4'>
                 <div className='flex flex-row flex-wrap gap-7 mx-auto justify-between text-[13px] px-3'>
                     {/* <div className='flex flex-row flex-wrap gap-7 lg:order-2 mx-auto md:mx-0 text-center'>
                         <a href="" className='text-nowrap'>Home</a>

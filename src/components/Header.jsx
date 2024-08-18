@@ -105,8 +105,8 @@ const Header = () => {
             {/* Menu Icon */}
             <div className="md:hidden flex items-center" >
                 <button className="text-white" onClick={()=>openMenu()}>
-                  <svg className={`size-5 transition-transform transform ${isMenuOpen? 'rotate-90' : ''} `} fill="white" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+                  <svg className={`size-7 transition-transform transform text-gray-800 dark:text-white  ${isMenuOpen? 'rotate-90' : ''} `} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
                   </svg>
                 </button>
               </div>
@@ -182,9 +182,10 @@ const Header = () => {
                 
                 {/*Close Button */}
                 <span className='font-bold cursor-pointer m-5 flex items-center gap-2 w-fit' onClick={()=>closeMenu()}>
-                <svg className={`size-[1rem]`} fill='white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                <svg className={`size-[1.4rem] text-gray-800 dark:text-white transition-transform transform ${isMenuOpen ? '' : 'rotate-90'} `} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
                 </svg>
+
                 {/* <span className=' text-[14px]'>close</span> */}
                 </span>
 
