@@ -1,14 +1,13 @@
 import React from 'react';
 import { feature } from '../data.js';
-import Card from '../components/Card.jsx';
+import Card from './common/Card.jsx';
 import { Link } from 'react-router-dom';
 
 const Featured = () => {
   return (
     <>
-      <div className='container flex justify-center mx-auto my-10 font-IBM'>
-        
-        <div className='flex gap-4 w-[100vw] overflow-auto cursor-pointer containee'>
+      <div className='container flex justify-center mx-auto my-10 font-IBM px-2 lg:px-0'>
+        <div className='flex gap-4 h-fit w-full overflow-auto cursor-pointer containee'>
           {feature.map((e) => {
             const { id, img, name, rate } = e;
 
@@ -19,6 +18,7 @@ const Featured = () => {
             );
           })}
         </div>
+        
       </div>
     </>
   );

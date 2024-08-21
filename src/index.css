@@ -22,11 +22,11 @@
     /* Card */
 
     .card-container{
-      @apply min-w-[80px] max-w-[180px] aspect-[1/1.4]  relative bg-white border border-slate-100
+      @apply min-w-[160px] h-[224px] max-w-[180px] md:h-[252px] relative bg-white border border-slate-100 overflow-hidden
     }
 
     .title{
-      @apply font-DM font-bold text-[14px] uppercase tracking-tight 
+      @apply font-DM font-bold text-[14px] uppercase tracking-tight truncate 
     }
 
     .product-container{
@@ -47,7 +47,7 @@
     
 
     .star {
-      @apply flex items-center h-[4rem] w-[4rem] md:h-[7rem] md:w-[7rem];
+      @apply flex items-center size-[5rem] md:size-[7rem];
     }
     
 
@@ -112,9 +112,7 @@
   @apply size-[10rem] bg-red-300 p-10;
 }
 
-.containee {
-  overflow: auto; /* or scroll */
-}
+
 
 /* For WebKit browsers (Chrome, Safari) */
 .containee::-webkit-scrollbar {

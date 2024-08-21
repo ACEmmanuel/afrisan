@@ -11,9 +11,9 @@ import {
 import './index.css'
 
 
-import ErrorPage from './components/ErrorPage.jsx'
+import ErrorPage from './components/layout/ErrorPage.jsx'
 import Featured from './components/Featured.jsx'
-import ProductPage from './components/ProductPage.jsx'
+import ProductPage from './components/pages/ProductPage/ProductPage.jsx'
 
 
 const router = createBrowserRouter(

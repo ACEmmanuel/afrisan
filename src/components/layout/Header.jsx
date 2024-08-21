@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 
-import SearchBar from './SearchBar';
-import DashboardSidebar from '../DashboardSidebar';
+import SearchBar from '../SearchBar';
+import DashboardSidebar from '../../DashboardSidebar';
 
 const Header = () => {
 

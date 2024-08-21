@@ -13,6 +13,12 @@ export default {
         "IBM": ["IBM Plex Sans", "sans-serif"],
       },
 
+      fontSize: {
+        '16px' : '1rem',
+        '20px' : '1.25rem',
+        
+      },
+
 
 
       // ANIMATIONS
