@@ -1,10 +1,15 @@
 import React, {useEffect, useRef, useState} from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { feature } from "../../../data";
 
+// Components
 import Stars from "../../common/Stars";
 import Counter from "./Counter";
 import ColorSelector from './ColorSelector'; 
+
+// Redux import
+import { addCount } from "../../../features/cart/cartSlice"; 
+import { useDispatch, useSelector } from "react-redux";
 
 
 
@@ -13,18 +18,23 @@ import ColorSelector from './ColorSelector';
 const ProductPage = () => {
 
   const { id } = useParams();
-  console.log('Product ID from URL:', id);
   const product = feature.find(item => item?.id === id);
-
+  
   if (!product) {
     return <div>Product not found</div>;
   }
+  
 
+  const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+  
+
+  
   const { img, name, rate } = product;
 
   return (
     <>
-    
+
       <section class="py-2 sm:py-2 font-IBM"> 
         <div class="container mx-auto px-4">
             
@@ -79,9 +89,9 @@ const ProductPage = () => {
 
                 <ColorSelector />
 
-                <div className="mt-4 text-16px">
+                <div className="mt-4 text-sm lg:text-16px">
                     <h3 className="font-semibold border-t pt-4">Choose Size</h3>
-                    <div className="flex items-center mt-2 space-x-2">
+                    <div className="flex flex-wrap items-center justify-start mt-2 gap-2 w-fit">
                     <button className="px-3 py-1 border border-gray-300 rounded-full">Small</button>
                     <button className="px-3 py-1 border border-gray-300 rounded-full">Medium</button>
                     <button className="px-3 py-1 border border-gray-300 text-black rounded-full">Large</button>
@@ -89,13 +99,17 @@ const ProductPage = () => {
                     </div>
                 </div>
                 
+
+
                 <Counter />
                 
-                
-                <button className="w-fit mt-4 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full" 
+
+                <Link to={'/cart'}>
+                <button className="w-full mt-6 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full" 
                 >
                     Add to Cart 
                 </button>
+                </Link>
                 </div>
             </div>
 
