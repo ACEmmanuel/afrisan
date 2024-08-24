@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from './common/Card.jsx';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { fetchAllData } from '../api/api.js';
 import Loading from './layout/Loading.jsx';
 

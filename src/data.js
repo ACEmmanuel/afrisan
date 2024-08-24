@@ -4,7 +4,7 @@ export const feature = [
         img: '/Featured/cap3.jpg',
         name: "Weaving Cap",
         rate: "2.0",
-        price: 10.99,
+        price: `$10.99`,
         category: "Accessories",
         description: "A beautifully crafted weaving cap, perfect for any occasion.",
     },

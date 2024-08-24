@@ -5,7 +5,6 @@ import { feature } from "../data";
 export const fetchItemFromData = (itemId) => {
     return new Promise((resolve, reject) => {
         const item = feature.find((item) => item.id === itemId);
-        console.log(item);
         
         if (item) {
             resolve(item);
@@ -18,12 +17,11 @@ export const fetchItemFromData = (itemId) => {
 export const fetchAllData = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(feature);
             if (feature) {
                 resolve(feature);
             } else {
                 reject('Item not found');
             }
-        }, 3000);
+        }, 1000);
     });
 };

@@ -1,6 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
 import { Link, useParams } from "react-router-dom";
+
+
+// I know the code is an eyesore, and i don't know what the fuck is going on 
 import { feature } from "../../../data";
+import { fetchItemFromData } from '../../../api/api'
+
 
 // Components
 import Stars from "../../common/Stars";
@@ -8,29 +13,46 @@ import Counter from "./Counter";
 import ColorSelector from './ColorSelector'; 
 
 // Redux import
-import { addCount } from "../../../features/cart/cartSlice"; 
+import { addItem } from "../../../features/cart/cartSlice"; 
 import { useDispatch, useSelector } from "react-redux";
 
 
 
-// I know the code is an eyesore, and i don't know what the fuck is going on 
 
 const ProductPage = () => {
 
-  const { id } = useParams();
-  const product = feature.find(item => item?.id === id);
+    const [item, setItem] = useState({})
+    const { id } = useParams();
   
-  if (!product) {
+    //Check if product is available
+  if (!item) {
     return <div>Product not found</div>;
   }
   
-
+  //Redux tools
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
-  
 
+
+  const addToCart = () => {
+       dispatch(addItem(item));
+  }
   
-  const { img, name, rate } = product;
+  
+  useEffect(()=>{
+      const getItem = async () => {
+          try {
+              const product = await fetchItemFromData(id);
+              setItem(product);
+            } catch (error) {
+                console.log('errorr');
+            }
+        }
+        
+        getItem()
+    }, [item])
+    
+    const { img, name, description, price } = item;
 
   return (
     <>
@@ -79,12 +101,12 @@ const ProductPage = () => {
                 </div>
 
                 <div className="flex items-center mt-2 text-xl">
-                    <span className="font-bold">$260</span>
+                    <span className="font-bold">{price}</span>
                     <span className="text-gray-600 ml-2 line-through">$300</span>
                 </div>
 
                 <p className="mt-2 text-gray-600 text-16px leading-[1.2]">
-                    This graphic t-shirt is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.
+                    {description}
                 </p>
 
                 <ColorSelector />
@@ -105,7 +127,8 @@ const ProductPage = () => {
                 
 
                 <Link to={'/cart'}>
-                <button className="w-full mt-6 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full" 
+                <button className="w-full mt-6 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full"
+                onClick={addToCart} 
                 >
                     Add to Cart 
                 </button>
