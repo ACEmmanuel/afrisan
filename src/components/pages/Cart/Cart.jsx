@@ -1,5 +1,5 @@
 import React from 'react'
-import CartItem from './subcomponents/CartItem';
+import CartInfo from './subcomponents/CartInfo';
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -29,7 +29,7 @@ const Cart = () => {
 
                         return(
 
-                            <CartItem price={price} name={name} image={img} />
+                            <CartInfo price={price} name={name} image={img} />
 
                         )
                        })}

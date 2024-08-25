@@ -15,7 +15,13 @@ const cartSlice = createSlice({
         addItem: (state, action) => {
             const e = action.payload;
             state.items.push(e);
-        }
+        },
+
+        // removeItem: (state, action) => {
+        //     const e = action.payload;
+        //     state.filter((e)=> e)
+        // }
+
     }
 })
 

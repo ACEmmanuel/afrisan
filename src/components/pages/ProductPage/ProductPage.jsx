@@ -10,11 +10,15 @@ import { fetchItemFromData } from '../../../api/api'
 // Components
 import Stars from "../../common/Stars";
 import Counter from "./Counter";
-import ColorSelector from './ColorSelector'; 
+import ColorSelector from './ColorSelector';
+import CartButton from "../Cart/subcomponents/CartButton";
 
 // Redux import
 import { addItem } from "../../../features/cart/cartSlice"; 
 import { useDispatch, useSelector } from "react-redux";
+import Header from "../../layout/Header";
+
+
 
 
 
@@ -22,6 +26,8 @@ import { useDispatch, useSelector } from "react-redux";
 const ProductPage = () => {
 
     const [item, setItem] = useState({})
+    const [isClicked, setIsClicked] = useState(false);
+
     const { id } = useParams();
   
     //Check if product is available
@@ -33,10 +39,18 @@ const ProductPage = () => {
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
 
-
   const addToCart = () => {
-       dispatch(addItem(item));
-  }
+    // dispatch(addItem(item));
+    console.log('Add to Cart clicked');
+    setIsClicked(!isClicked);
+}
+
+const removeFromCart = () => {
+    dispatch(addItem(item));
+    console.log('Remove from Cart clicked');
+    setIsClicked(!isClicked);
+}
+
   
   
   useEffect(()=>{
@@ -56,7 +70,7 @@ const ProductPage = () => {
 
   return (
     <>
-
+    <Header />
       <section class="py-2 sm:py-2 font-IBM"> 
         <div class="container mx-auto px-4">
             
@@ -125,14 +139,19 @@ const ProductPage = () => {
 
                 <Counter />
                 
+               
+               {isClicked ?
+                    <div onClick={addToCart}> 
+                    <CartButton value={'Remove from Cart '}/>
+                    </div> 
+                : 
+                <div onClick={removeFromCart}>
+                    <CartButton value={'Add to Cart'} />
+                </div>
+                }
+                
 
-                <Link to={'/cart'}>
-                <button className="w-full mt-6 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full"
-                onClick={addToCart} 
-                >
-                    Add to Cart 
-                </button>
-                </Link>
+
                 </div>
             </div>
 
