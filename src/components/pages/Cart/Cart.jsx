@@ -23,35 +23,39 @@ const Cart = () => {
                     <ul class="-my-8">
                     <li class="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                         
-                    <div>
-                       {item.map((e)=>{
-                            const {name, price, img} = e
+                    {item.length < 1 && (
+                        <div className='text-sm font-semibold text-red-600 uppercase'>No items available</div> // or any other placeholder
+                    )}
+                        
+                        <div>
+                        {item.map((e)=>{
+                                const {name, price, img} = e
 
-                        return(
+                            return(
 
-                            <CartInfo price={price} name={name} image={img} />
+                                <CartInfo price={price} name={name} image={img} />
 
-                        )
-                       })}
+                            )
+                        })}
+                        </div>
+
+                        </li>
+                        </ul>
                     </div>
-
-                    </li>
-                    </ul>
-                </div>
 
                 <div class="mt-6 border-t border-b py-2">
                     <div class="flex items-center justify-between">
                     <p class="text-sm text-gray-400">Subtotal</p>
-                    <p class="text-lg font-semibold text-gray-900">$399.00</p>
+                    <p class="text-lg font-semibold text-gray-900">$0</p>
                     </div>
                     <div class="flex items-center justify-between">
                     <p class="text-sm text-gray-400">Shipping</p>
-                    <p class="text-lg font-semibold text-gray-900">$8.00</p>
+                    <p class="text-lg font-semibold text-gray-900">$0</p>
                     </div>
                 </div>
                 <div class="mt-6 flex items-center justify-between">
                     <p class="text-sm font-medium text-gray-900">Total</p>
-                    <p class="text-2xl font-semibold text-gray-900"><span class="text-xs font-normal text-gray-400">USD</span> 408.00</p>
+                    <p class="text-2xl font-semibold text-gray-900"><span class="text-xs font-normal text-gray-400">USD</span> 0</p>
                 </div>
 
                 <div class="mt-6 text-center">

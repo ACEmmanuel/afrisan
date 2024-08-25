@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 
 
 // I know the code is an eyesore, and i don't know what the fuck is going on 
-import { feature } from "../../../data";
 import { fetchItemFromData } from '../../../api/api'
 
 
@@ -14,7 +13,7 @@ import ColorSelector from './ColorSelector';
 import CartButton from "../Cart/subcomponents/CartButton";
 
 // Redux import
-import { addItem } from "../../../features/cart/cartSlice"; 
+import { addItem, removeItem } from "../../../features/cart/cartSlice"; 
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../layout/Header";
 
@@ -26,7 +25,10 @@ import Header from "../../layout/Header";
 const ProductPage = () => {
 
     const [item, setItem] = useState({})
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked, setIsClicked] = useState(() => {
+        const savedState = localStorage.getItem('isClicked');
+        return savedState === 'true';
+    });
 
     const { id } = useParams();
   
@@ -39,18 +41,25 @@ const ProductPage = () => {
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
 
-  const addToCart = () => {
-    // dispatch(addItem(item));
-    console.log('Add to Cart clicked');
-    setIsClicked(!isClicked);
-}
 
-const removeFromCart = () => {
-    dispatch(addItem(item));
-    console.log('Remove from Cart clicked');
-    setIsClicked(!isClicked);
-}
+    const toggleCartState = () => {
+        setIsClicked(prevState => {
+            // Toggle the state
+            const newState = !prevState; 
+            // Update localStorage
+            localStorage.setItem('isClicked', newState.toString()); 
 
+            if (newState) {
+                // Dispatch add action if newState is true
+                dispatch(addItem(item)); 
+            } else {
+                // Dispatch remove action if newState is false
+                dispatch(removeItem(item)); 
+            }
+            // Return the new state
+            return newState;
+        });
+    };
   
   
   useEffect(()=>{
@@ -139,16 +148,10 @@ const removeFromCart = () => {
 
                 <Counter />
                 
-               
-               {isClicked ?
-                    <div onClick={addToCart}> 
-                    <CartButton value={'Remove from Cart '}/>
-                    </div> 
-                : 
-                <div onClick={removeFromCart}>
-                    <CartButton value={'Add to Cart'} />
+             
+                <div onClick={toggleCartState}>
+                    <CartButton value={isClicked ? 'Remove from Cart' : 'Add to Cart'} />
                 </div>
-                }
                 
 
 

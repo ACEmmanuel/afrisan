@@ -14,15 +14,8 @@ const CartButton = ({value}) => {
       
         <button className="w-full mt-6 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full" 
         >
-           {value}
+          {value}
         </button>
-          {/* : 
-          <button className="w-full mt-6 px-10 py-3 bg-gray-900 text-white text-sm hover:bg-gray-800 rounded-full" 
-           
-          >
-              Add to Cart
-          </button> */}
-      
     </>
   )
 }
