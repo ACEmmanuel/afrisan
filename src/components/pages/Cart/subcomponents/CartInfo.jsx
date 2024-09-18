@@ -1,6 +1,8 @@
 import React from 'react';
 
-const CartInfo = ({ name, price, image }) => {
+const CartInfo = ({ name, price, image, quantity }) => {
+  const displayQuantity = quantity || 1;
+
   return (
     <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
       {/* Image Container */}
@@ -33,7 +35,7 @@ const CartInfo = ({ name, price, image }) => {
                   -
                 </button>
                 <div className="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">
-                  1
+                  {displayQuantity}
                 </div>
                 <button className="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">
                   +

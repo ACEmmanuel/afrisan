@@ -7,6 +7,7 @@ export const feature = [
         price: `$10.99`,
         category: "Accessories",
         description: "A beautifully crafted weaving cap, perfect for any occasion.",
+        quantity: 0,
     },
     {
         id: '2',
@@ -16,6 +17,7 @@ export const feature = [
         price: 25.99,
         category: "Bags",
         description: "A sturdy and stylish school bag with ample space.",
+        quantity: 0,
     },
     {
         id: '3',
@@ -25,6 +27,7 @@ export const feature = [
         price: 15.99,
         category: "Accessories",
         description: "A trendy face cap to complement your style.",
+        quantity: 0,
     },
     {
         id: '4',
@@ -34,6 +37,7 @@ export const feature = [
         price: 12.99,
         category: "Accessories",
         description: "A cap that reflects tradition and elegance.",
+        quantity: 0,
     },
     {
         id: '5',
@@ -43,6 +47,7 @@ export const feature = [
         price: 8.99,
         category: "Accessories",
         description: "Handmade crochet cap, warm and comfortable.",
+        quantity: 0,
     },
     {
         id: '6',
@@ -52,6 +57,7 @@ export const feature = [
         price: 18.99,
         category: "Skincare",
         description: "A high-quality cream to nourish and protect your skin.",
+        quantity: 0,
     },
     {
         id: '7',
@@ -61,6 +67,7 @@ export const feature = [
         price: 22.99,
         category: "Footwear",
         description: "Comfortable brown sandals, perfect for casual outings.",
+        quantity: 0,
     },
     {
         id: '8',
@@ -70,6 +77,7 @@ export const feature = [
         price: 45.99,
         category: "Footwear",
         description: "Elegant black shoes suitable for formal events.",
+        quantity: 0,
     },
     {
         id: '9',
@@ -79,6 +87,7 @@ export const feature = [
         price: 30.99,
         category: "Footwear",
         description: "Stylish white sneakers for a modern look.",
+        quantity: 0,
     },
     {
         id: '10',
@@ -88,6 +97,7 @@ export const feature = [
         price: 12.99,
         category: "Footwear",
         description: "Comfortable white slippers for everyday wear.",
+        quantity: 0,
     },
 ];
 
