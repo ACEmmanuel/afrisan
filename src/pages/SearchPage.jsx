@@ -26,7 +26,7 @@ const SearchPage = () => {
             <input
                 type="text"
                 placeholder="Search products, brands and categories"
-                className={`pl-12 pr-4 w-[95%] rounded-full bg-white text-gray-700 cursor-text text-[16px] leading-5 tracking-tight py-[0.8rem] shadow-sm outline outline-1 outline-gray-300 focus:outline-2 focus:outline-gray-400`}
+                className={`pl-12 pr-4 w-[95%] rounded-full bg-white text-gray-700 cursor-text text-[14px] leading-5 tracking-tight py-[0.8rem] shadow-sm outline outline-1 outline-gray-300 focus:outline-2 focus:outline-gray-400`}
  
             />
         </div>
