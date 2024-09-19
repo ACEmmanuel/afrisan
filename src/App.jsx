@@ -14,12 +14,13 @@ function App() {
       
       <Header />
       <Featured />
+      <Featured />
       <Footer />
     </>
   )
 }
 
-export default App
+export default App;
 
 
 

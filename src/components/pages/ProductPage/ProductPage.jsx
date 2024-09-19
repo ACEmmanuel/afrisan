@@ -108,7 +108,7 @@ const ProductPage = () => {
               </div>
 
               <div className="flex items-center mt-2 text-xl">
-                <span className="font-bold">{price}</span>
+                <span className="font-bold">${price}</span>
                 <span className="text-gray-600 ml-2 line-through">$300</span>
               </div>
 
