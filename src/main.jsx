@@ -16,6 +16,7 @@ import Featured from './components/Featured.jsx';
 import ProductPage from './components/pages/ProductPage/ProductPage.jsx';
 import Cart from './components/pages/Cart/Cart.jsx';
 import Skeleton from './components/common/Skeleton.jsx';
+import SearchPage from './pages/SearchPage.jsx';
 
 import { store, persistor } from './app/store.js';  // Import persistor
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/skeleton" element={<Skeleton />} />
+      <Route path="/search" element={<SearchPage />} />
     </>
   )
 );

@@ -153,7 +153,7 @@ const Header = () => {
             <div className="text-[1.5rem] tracking- leading-5 font-medium">Afrisan</div>
 
             {/* Search Bar */}
-            <SearchBar size="hidden md:flex" input="text-[16px] leading-5 tracking-tight py-3" width='95%' />
+            <SearchBar size="hidden md:flex" input="text-[16px] leading-5 tracking-tight py-[0.8rem]" width='95%' />
 
 
             <div className='gap-5 hidden md:flex'>

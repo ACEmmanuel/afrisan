@@ -1,10 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = ({size, width, input}) => {
+
+  const navigate = useNavigate();
+
+  const next = () => {
+    navigate('/search');
+  }
+
   return (
     <>
       <div className= {`flex items-center justify-center w-full p-2 ${size}`} >
         <div className="relative flex w-full" style={{ maxWidth: width }}>
+
+          {/* SVG Cart Icon */}
           <span className="absolute inset-y-0 left-0 flex items-center pl-3">
             <svg
               className="w-6 h-6 text-gray-500"
@@ -21,11 +31,13 @@ const SearchBar = ({size, width, input}) => {
               ></path>
             </svg>
           </span>
-          <input
-            type="text"
-            placeholder="Search products, brands and categories"
-            className={`pl-12 pr-4 w-full border rounded-full text-gray-700 focus:outline-none focus:border-gray-400 ${input}`}
-          />
+
+          {/* Search Input */}
+          <div className={`pl-12 pr-4 w-full border rounded-full bg-white  text-gray-700 cursor-text ${input}`} onClick={next} >
+            <span className="text-gray-400">
+              Search products, brands and categories
+            </span>
+          </div>
         </div>
       </div>
     </>
