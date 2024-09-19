@@ -6,7 +6,7 @@ const cartSlice = createSlice({
   initialState: {
     items: [],            // Array to hold cart items, initially empty
     totalQuantity: 0,     // Total quantity of items in the cart, initially 0
-    totalPrice: 0.00,     // Total price of the cart, initially 0.00
+    totalPrice: 0,     // Total price of the cart, initially 0.00
     currency: 'USD',      // Currency for prices, default is 'USD'
   },
 
@@ -14,16 +14,21 @@ const cartSlice = createSlice({
     addItem: (state, action) => {
       const newItem = action.payload;
       const presentItem = state.items.find((e) => e.id === newItem.id);
-
+    
       if (presentItem) {
-        presentItem.quantity += 1;  // Increment quantity for existing item
+        presentItem.quantity += 1; // Increment quantity for existing item
       } else {
         state.items.push({ ...newItem, quantity: 1 });
       }
-
+    
       state.totalQuantity += 1;
-      state.totalPrice += newItem.price;
+    
+      // Calculate the new total price by reducing it
+      state.totalPrice = state.items.reduce((total, item) => {
+        return total + ((item.price) * item.quantity);
+      }, 0);
     },
+    
 
     removeItem: (state, action) => {
       const itemId = action.payload.id;
