@@ -137,7 +137,7 @@ const Header = () => {
   
   return (
     <>
-        <header className='font-IBM bg-orange-500 py-5 px-6 lg:px-10 relative text-slate-100 mb-1 z-10'>
+        <header className='font-IBM bg-orange-500 py-5 md:py-3 px-6 lg:px-10 relative text-slate-100 mb-1 z-10'>
           <div className='mx-auto flex justify-between items-center gap-5'>
 
             {/* Menu Icon */}
@@ -153,7 +153,7 @@ const Header = () => {
             <div className="text-[1.5rem] tracking- leading-5 font-medium">Afrisan</div>
 
             {/* Search Bar */}
-            <SearchBar size="hidden md:flex" input="text-[16px] leading-5 tracking-tight py-4" width='95%' />
+            <SearchBar size="hidden md:flex" input="text-[16px] leading-5 tracking-tight py-3" width='95%' />
 
 
             <div className='gap-5 hidden md:flex'>

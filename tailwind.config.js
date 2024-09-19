@@ -19,19 +19,25 @@ export default {
         
       },
 
-
-
+      
+      
       // ANIMATIONS
 
       keyframes: {
         marquee: {
           from: { transform: 'translateX(0)' },
           to: {transform: 'translateX(-100%)' }
-        }
+        },
+
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
 
       animation: {
         'marquee': 'marquee 2s linear infinite',
+        shimmer: 'shimmer 5s infinite', 
       }
 
     },

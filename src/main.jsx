@@ -15,6 +15,7 @@ import ErrorPage from './components/layout/ErrorPage.jsx';
 import Featured from './components/Featured.jsx';
 import ProductPage from './components/pages/ProductPage/ProductPage.jsx';
 import Cart from './components/pages/Cart/Cart.jsx';
+import Skeleton from './components/common/Skeleton.jsx';
 
 import { store, persistor } from './app/store.js';  // Import persistor
 
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="/featured" element={<Featured />} />
       <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/skeleton" element={<Skeleton />} />
     </>
   )
 );

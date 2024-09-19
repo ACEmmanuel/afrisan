@@ -22,6 +22,6 @@ export const fetchAllData = () => {
             } else {
                 reject('Item not found');
             }
-        }, 500);
+        }, 1500);
     });
 };
