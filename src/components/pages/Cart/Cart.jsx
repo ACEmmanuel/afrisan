@@ -53,7 +53,7 @@ const Cart = () => {
                                 <div className="mt-6 border-t border-b py-2">
                                     <div className="flex items-center justify-between">
                                         <p className="text-sm text-gray-400">Subtotal</p>
-                                        <p className="text-lg font-semibold text-gray-900">${totalPrice.toFixed(2)}</p>
+                                        <p className="text-lg font-semibold text-gray-900">${totalPrice}</p>
                                     </div>
                                     <div className="flex items-center justify-between">
                                         <p className="text-sm text-gray-400">Shipping</p>
@@ -63,7 +63,7 @@ const Cart = () => {
                                 <div className="mt-6 flex items-center justify-between">
                                     <p className="text-sm font-medium text-gray-900">Total</p>
                                     <p className="text-2xl font-semibold text-gray-900">
-                                        <span className="text-xs font-normal text-gray-400">{currency}</span> {totalPrice.toFixed(2)}
+                                        <span className="text-xs font-normal text-gray-400">{currency}</span> {totalPrice}
                                     </p>
                                 </div>
 
