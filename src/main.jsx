@@ -16,7 +16,7 @@ import Featured from './components/Featured.jsx';
 import ProductPage from './components/pages/ProductPage/ProductPage.jsx';
 import Cart from './components/pages/Cart/Cart.jsx';
 import Skeleton from './components/common/Skeleton.jsx';
-import SearchPage from './pages/SearchPage.jsx';
+import SearchPage from './components/pages/searchPage/SearchPage.jsx';
 
 import { store, persistor } from './app/store.js';  // Import persistor
 

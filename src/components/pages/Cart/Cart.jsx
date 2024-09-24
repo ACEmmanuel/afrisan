@@ -42,6 +42,7 @@ const Cart = () => {
                                                             image={img}
                                                             quantity={quantity}
                                                             key={e.id}
+                                                            track={e.id}
                                                         />
                                                     );
                                                 })}

@@ -46,6 +46,9 @@ const ProductPage = () => {
     
     // Optionally set UI states for loading and pop-up
     setIsLoading(false);
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 700);
   };
   
   

@@ -1,16 +1,15 @@
-import React from 'react';
-import SearchBar from '../components/SearchBar';
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const SearchPage = () => {
+
+const SearchHeader = () => {
 
     const navigate = useNavigate();
-
+    
     const back = () => {
         navigate(-1);
     }
     
-
   return (
     <>
         <div className='flex mx-auto w-full border justify-between py-4 px-6'>
@@ -21,18 +20,8 @@ const SearchPage = () => {
                 </svg>
             </span>
         </div>
-
-        <div className="flex justify-center items-center mt-2">
-            <input
-                type="text"
-                placeholder="Search products, brands and categories"
-                className={`pl-12 pr-4 w-[95%] rounded-full bg-white text-gray-700 cursor-text text-[14px] leading-5 tracking-tight py-[0.8rem] shadow-sm outline outline-1 outline-gray-300 focus:outline-2 focus:outline-gray-400`}
- 
-            />
-        </div>
-
     </>
   )
 }
 
-export default SearchPage
+export default SearchHeader

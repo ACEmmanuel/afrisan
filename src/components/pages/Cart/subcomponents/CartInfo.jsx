@@ -1,10 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { increaseItemQuantity, decreaseItemQuantity, removeItem } from '../../../../features/cart/cartSlice';
 
-const CartInfo = ({ name, price, image, quantity }) => {
+const CartInfo = ({ name, price, image, quantity, track }) => {
+
+
+  const dispatch = useDispatch();
   const displayQuantity = quantity || 1;
 
+  //Increase Product Quantity
+  const add = () => {
+    dispatch(increaseItemQuantity({update: 1, theID: track, price: price})) 
+  }
+
+  //Decrease Product Quantity
+  const remove = () => {
+    dispatch(decreaseItemQuantity({update: 1, theID: track, price: price})) 
+  }
+
   return (
-    <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
+    <>
+    <div className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
       {/* Image Container */}
       <div className="shrink-0">
         <img
@@ -31,13 +47,13 @@ const CartInfo = ({ name, price, image, quantity }) => {
 
             <div className="sm:order-1">
               <div className="mx-auto flex h-8 items-stretch text-gray-600">
-                <button className="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">
+                <button className="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white" onClick={remove}>
                   -
                 </button>
                 <div className="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">
                   {displayQuantity}
                 </div>
-                <button className="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">
+                <button className="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white" onClick={add}>
                   +
                 </button>
               </div>
@@ -46,7 +62,7 @@ const CartInfo = ({ name, price, image, quantity }) => {
         </div>
 
         {/* Remove Button */}
-        <div className="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
+        <div className="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto" onClick={() => dispatch(removeItem(track))}>
           <button
             type="button"
             className="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
@@ -67,8 +83,10 @@ const CartInfo = ({ name, price, image, quantity }) => {
             </svg>
           </button>
         </div>
+
       </div>
-    </li>
+    </div>
+    </>
   );
 };
 

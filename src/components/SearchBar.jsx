@@ -33,7 +33,7 @@ const SearchBar = ({size, width, input}) => {
           </span>
 
           {/* Search Input */}
-          <div className={`pl-12 pr-4 w-full border rounded-full bg-white  text-gray-700 cursor-text ${input}`} onClick={next} >
+          <div className={`pl-12 pr-4 w-full border rounded-full bg-white truncate text-gray-700 cursor-text ${input}`} onClick={next} >
             <span className="text-gray-400">
               Search products, brands and categories
             </span>
