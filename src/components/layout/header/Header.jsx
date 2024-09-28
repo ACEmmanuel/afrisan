@@ -146,7 +146,7 @@ const Header = () => {
   
   return (
     <>
-        <header className='font-IBM bg-orange-500 py-5 md:py-3 px-6 lg:px-10 relative text-slate-100 mb-1 z-10'>
+        <header className='font-DM bg-orange-500 py-5 md:py-3 px-6 lg:px-10 relative text-slate-100 mb-1 z-10'>
           <div className='mx-auto flex justify-between items-center gap-5'>
 
             {/* Menu Icon */}
