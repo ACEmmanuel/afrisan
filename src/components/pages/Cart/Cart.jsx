@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import CartInfo from './subcomponents/CartInfo';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem, clearCart } from '../../../features/cart/cartSlice';
-import Header from '../../layout/Header';
+import Header from '../../layout/header/Header';
 
-const Cart = () => {
+const Cart = () => { 
     const dispatch = useDispatch();
     const { items, totalQuantity, totalPrice, currency } = useSelector((state) => state.cart);
       
@@ -17,10 +17,10 @@ const Cart = () => {
     return (
         <>
             <Header />
-            <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20">
+            <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20 font-DM">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-center">
-                        <h1 className="text-2xl font-semibold text-gray-900">Your Cart</h1>
+                        <h1 className="text-2xl font-semibold text-gray-900">Your Cart is Empty</h1>
                     </div>
 
                     <div className="mx-auto mt-8 max-w-2xl md:mt-12">
@@ -30,7 +30,7 @@ const Cart = () => {
                                     <ul className="-my-8">
                                         <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                                             {items.length < 1 && (
-                                                <div className='text-sm font-semibold text-red-600 uppercase'>No items available</div>
+                                                <div className='text-sm font-semibold text-red-600 uppercase'>No Producct Has Been Added</div>
                                             )}
                                             <div>
                                                 {items.map((e) => {

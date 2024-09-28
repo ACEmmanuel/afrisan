@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchItemFromData } from '../../../api/api';
-import Stars from "../../common/Stars";
-import Counter from "./Counter";
-import ColorSelector from './ColorSelector';
-import CartButton from "../Cart/subcomponents/CartButton";
+
+
+//Redux Store
 import { addItem } from "../../../features/cart/cartSlice"; 
 import { useDispatch, useSelector } from "react-redux";
-import Header from "../../layout/Header";
+
+
+//Components
+import Stars from "../../common/Stars";
+import Counter from "./subcomponent/Counter";
+import ColorSelector from './subcomponent/ColorSelector';
+import Header from "../../layout/header/Header"; 
+import CartButton from "../Cart/subcomponents/CartButton";
+import Loading from "../../common/Loading";
+
 
 const ProductPage = () => {
   const [item, setItem] = useState({});
@@ -40,15 +48,17 @@ const ProductPage = () => {
 
   const addToCart = () => {
     if (!item || !item.id) return;
-  
-    // Dispatch Redux action to update the global state
-    dispatch(addItem(item));
+    
+    setIsLoading(true);
     
     // Optionally set UI states for loading and pop-up
-    setIsLoading(false);
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 700);
+    setTimeout(() => {
+
+      // Dispatch Redux action to update the global state
+      dispatch(addItem(item));
+
+      setIsLoading(false);
+    }, 700);
   };
   
   
@@ -73,7 +83,7 @@ const ProductPage = () => {
                   </div>
                 )} 
                  */}
-      <section className="py-2 sm:py-2 font-IBM"> 
+      <section className="py-2 sm:py-2 font-DM"> 
         <div className="container mx-auto px-4">
           <div className="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
 
@@ -134,7 +144,7 @@ const ProductPage = () => {
 
               <div className="">
                 <div onClick={addToCart}>
-                  <CartButton value={isLoading ? 'Loading...' : 'Add to Cart'} disabled={isLoading} />
+                  <CartButton value={isLoading ? <Loading /> : 'Add to Cart'} disabled={isLoading} isloading={isLoading}/>
                 </div>
               </div>
             </div>

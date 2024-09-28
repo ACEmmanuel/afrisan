@@ -1,8 +1,14 @@
 import React, {useEffect, useRef, useState} from 'react'
+//This header belongs to the home page, i know it looks bad please bear with me 
 
-import SearchBar from '../SearchBar';
-import DashboardSidebar from '../common/DashboardSidebar';
-import Cart from '../pages/Cart/Cart';
+import SearchBar from '../../SearchBar'; //Mobile Screen search bar
+import DashboardSidebar from './subcomponents/DashboardSidebar';
+import Cart from '../../pages/Cart/Cart';
+
+// //Tablet and PC Screen search bar
+import LGSearchBar from './subcomponents/SearchBar'; 
+// import SearchArea from './subcomponents/SearchArea';
+
 
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -16,8 +22,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [totalQuantity, setTotalQuantity] = useState(0)
 
-  const cart = useSelector((state)=> state.cart);
+  //Tablet and PC Screen States
+  const [searchResults, setSearchResults] = useState([]);  // Store fetched products
+  const [error, setError] = useState('');  // Store error messages
 
+  const cart = useSelector((state)=> state.cart);
 
   // Larger Screens
   const accountRef = useRef();
@@ -152,8 +161,12 @@ const Header = () => {
             {/* Logo */}
             <div className="text-[1.5rem] tracking- leading-5 font-medium">Afrisan</div>
 
+
             {/* Search Bar */}
-            <SearchBar size="hidden md:flex" input="text-[16px] leading-5 tracking-tight py-[0.8rem]" width='95%' />
+              <LGSearchBar />
+            {/* <div className='relative w-full border'> */}
+              {/* <SearchArea searchResults={searchResults} error={error} /> */}
+            {/* </div> */}
 
 
             <div className='gap-5 hidden md:flex'>
@@ -166,10 +179,11 @@ const Header = () => {
                   </svg>
                 </button>
                 {isDropdownOpen.account && (
-                 <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg py-2 transition-opacity duration-1000 opacity-100">
-                  <a href="#" className="block py-2 hover:bg-gray-600 px-4">Profile</a>
-                  <a href="#" className="block py-2 hover:bg-gray-600 px-4">Settings</a>
-                  <a href="#" className="block py-2 hover:bg-gray-600 px-4">Logout</a>
+                 <div className="absolute right-0 mt-4 w-[10rem] bg-white text-black rounded shadow-lg py-2 transition-opacity duration-1000 opacity-100">
+                  <div className="absolute top-0 right-0 transform -translate-x-1 -translate-y-1 w-4 h-4 bg-white rotate-45 -z-[99]"></div>
+                  <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Profile</a>
+                  <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Settings</a>
+                  <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Logout</a>
                 </div>
                 )}
               </div>
@@ -183,9 +197,10 @@ const Header = () => {
                   </svg>
                 </button>
                 {isDropdownOpen.help && (
-                 <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg py-2 transition-opacity duration-300 opacity-100">
-                 <a href="#" className="block px-4 py-2 hover:hover:bg-gray-600">FAQ</a>
-                 <a href="#" className="block px-4 py-2 hover:hover:bg-gray-600">Contact Support</a>
+                 <div className="absolute right-0 mt-4 w-[10rem] bg-white text-black rounded shadow-lg py-2 transition-opacity duration-300 opacity-100">
+                  <div className="absolute top-0 right-0 transform -translate-x-1 -translate-y-1 w-4 h-4 bg-white rotate-45 -z-[99]"></div>
+                 <a href="#" className="block px-4 py-2 hover:hover:bg-[#efefef]">FAQ</a>
+                 <a href="#" className="block px-4 py-2 hover:hover:bg-[#efefef]">Contact Support</a>
                </div>
                 )}
               </div>
@@ -292,9 +307,9 @@ export default Header;
 // </button>
 // {isDropdownOpenMobile.account && (
 // <div className="relative right-0 mt-0 w-full rounded py-2 transition-opacity duration-1000 opacity-100 text-[18px] font-medium text-slate-100">
-//   <a href="#" className="block py-2 hover:bg-gray-600 px-4">Profile</a>
-//   <a href="#" className="block py-2 hover:bg-gray-600 px-4">Settings</a>
-//   <a href="#" className="block py-2 hover:bg-gray-600 px-4">Logout</a>
+//   <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Profile</a>
+//   <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Settings</a>
+//   <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Logout</a>
 // </div>
 // )}
 // </div>
@@ -309,8 +324,8 @@ export default Header;
 // </button>
 // {isDropdownOpenMobile.help && (
 // <div className="relative right-0 mt-2 w-full rounded py-2 transition-opacity duration-300 opacity-100 text-[18px] font-medium text-slate-100">
-// <a href="#" className="block px-4 py-2 hover:hover:bg-gray-600">FAQ</a>
-// <a href="#" className="block px-4 py-2 hover:hover:bg-gray-600">Contact Support</a>
+// <a href="#" className="block px-4 py-2 hover:hover:bg-[#efefef]">FAQ</a>
+// <a href="#" className="block px-4 py-2 hover:hover:bg-[#efefef]">Contact Support</a>
 // </div>
 // )}
 // </div>

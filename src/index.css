@@ -22,11 +22,11 @@
     /* Card */
 
     .card-container{
-      @apply min-w-[160px] h-[224px] max-w-[180px] md:h-[252px] relative bg-white border border-slate-100 overflow-hidden
+      @apply min-w-[160px] h-[224px] max-w-[180px] md:h-[252px] relative bg-white border border-slate-100 overflow-hidden font-DM
     }
 
     .title{
-      @apply font-DM font-bold text-[14px] uppercase tracking-tight truncate 
+      @apply font-DM font-bold text-[0.8125rem] md:text-[0.75rem] uppercase tracking-tight truncate 
     }
 
     .product-container{

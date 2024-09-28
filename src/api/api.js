@@ -32,7 +32,7 @@ export const fetchName = (searchTerm) => {
     return new Promise((resolve, reject) => {
         const returnedNames = feature
             .filter(item => 
-                item.name.toLowerCase().trim().includes(searchTerm.trim().toLowerCase())
+                item.name.toLowerCase().trim().includes(searchTerm.trim().toLowerCase()) || item.category.toLowerCase().trim().includes(searchTerm.trim().toLowerCase())
             )
             .map(item => ({
                 id: item.id,               

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import App from './components/pages/Home/App.jsx';
 import {
   createBrowserRouter,
-  createRoutesFromElements,
+  createRoutesFromElements, 
   RouterProvider,
   Route
 } from 'react-router-dom';
@@ -12,7 +12,7 @@ import { PersistGate } from 'redux-persist/integration/react';  // Import Persis
 import './index.css';
 
 import ErrorPage from './components/layout/ErrorPage.jsx';
-import Featured from './components/Featured.jsx';
+import Featured from './components/pages/featured/Featured.jsx';
 import ProductPage from './components/pages/ProductPage/ProductPage.jsx';
 import Cart from './components/pages/Cart/Cart.jsx';
 import Skeleton from './components/common/Skeleton.jsx';

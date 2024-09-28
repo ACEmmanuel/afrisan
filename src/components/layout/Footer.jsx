@@ -3,47 +3,49 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-    <footer class="bg-white dark:bg-gray-900 font-IBM">
+    <footer class="bg-gray-900 font-DM">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0 max-w-md">
+
+            <div class="mb-4 md:mb-0 max-w-md">
                 <a href="" class="flex items-center mb-2">
                         {/* <img src="docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" /> */}
                     <span class="self-center text-[1.6rem] font-semibold whitespace-nowrap dark:text-white">Afrisan</span>
                 </a>
-                    <span className='text-[0.875rem] text-gray-500 dark:text-gray-400 font-medium w-[2rem]'>Reinventing the way of creating websites, we aim to create the most master-paced WordPress theme available on the market.</span>
-                </div>
-                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <span className='text-[0.875rem] text-gray-400 font-medium w-[2rem]'>Reinventing the way of creating websites, we aim to create the most master-paced WordPress theme available on the market.</span>
+            </div>
+                
+                <div class="grid grid-cols-2 gap-5 sm:gap-6 sm:grid-cols-3">
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="" class="hover:underline text-[0.875rem] md:text-[1rem]">Flowbite</a>
+                        <h2 class="mb-3 text-sm font-semibold  uppercase text-white">Resources</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-1">
+                                <a href="" class="hover:underline text-[0.875rem] ">Flowbite</a>
                             </li>
                             <li>
-                                <a href="" class="hover:underline text-[0.875rem] md:text-[1rem]">Tailwind CSS</a>
+                                <a href="" class="hover:underline text-[0.875rem] ">Tailwind CSS</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="" class="hover:underline text-[0.875rem] md:text-[1rem]">Github</a>
+                        <h2 class="mb-3 text-sm font-semibold  uppercase text-white">Follow us</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-1">
+                                <a href="" class="hover:underline text-[0.875rem] ">Github</a>
                             </li>
                             <li>
-                                <a href="" class="hover:underline text-[0.875rem] md:text-[1rem]">Discord</a>
+                                <a href="" class="hover:underline text-[0.875rem] ">Discord</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="#" class="hover:underline text-[0.875rem] md:text-[1rem]">Privacy Policy</a>
+                        <h2 class="mb-3 text-sm font-semibold  uppercase text-white">Legal</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-1">
+                                <a href="#" class="hover:underline text-[0.875rem] ">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:underline text-[0.875rem] md:text-[1rem]">Terms &amp; Conditions</a>
+                                <a href="#" class="hover:underline text-[0.875rem] ">Terms &amp; Conditions</a>
                             </li>
                         </ul>
                     </div>
@@ -51,7 +53,7 @@ const Footer = () => {
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">Afrisan™</a>. All Rights Reserved.
+                <span class="text-[0.75rem] text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">Afrisan™</a>. All Rights Reserved.
                 </span>
                 <div class="flex mt-4 sm:justify-center sm:mt-0">
                     <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">

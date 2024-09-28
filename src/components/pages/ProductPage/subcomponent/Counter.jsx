@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Counter = () => {
   // State to keep track of the counter value
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(1);  
 
   // Function to handle increment
   const increment = () => {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Footer from './components/layout/Footer'
-import Header from './components/layout/Header'
-import Featured from './components/Featured'
+import Footer from '../../layout/Footer'
+import Header from '../../layout/header/Header'
+import Featured from '../featured/Featured'
 
 
 
@@ -14,7 +14,7 @@ function App() {
       
       <Header />
       <Featured />
-      <Featured />
+      {/* <Featured /> */}
       <Footer />
     </>
   )

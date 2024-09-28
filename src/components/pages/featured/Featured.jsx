@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Card from './common/Card.jsx';
+import Card from '../../common/Card.jsx';
 import { Link, Outlet } from 'react-router-dom';
-import { fetchAllData } from '../api/api.js';
-import Loading from './layout/Loading.jsx';
-import Skeleton from './common/Skeleton.jsx';
+import { fetchAllData } from '../../../api/api.js';
+import Loading from '../../common/Loading.jsx';
+import Skeleton from '../../common/Skeleton.jsx';
 
 const Featured = () => {
 
@@ -32,7 +32,7 @@ const Featured = () => {
 
   return (
     <>
-      <div className='container flex justify-center mx-auto my-10 font-IBM px-2 lg:px-0'>
+      <div className='container flex justify-center mx-auto my-10 font-DM px-2 lg:px-0'>
         <div className='flex gap-4 h-fit w-full overflow-auto cursor-pointer containee'>
           {allItems ? (allItems.map((e) => {
             const { id, img, name, rate } = e;

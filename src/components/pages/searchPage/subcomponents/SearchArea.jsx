@@ -22,7 +22,7 @@ const SearchArea = ({searchResults, error}) => {
                 </Link>
             )
             ) : (
-                <p className='text-red-600 font-bold text-center mt-10'>{error || 'No products found.'}</p>
+                <p className='text-black-600 text-center mt-10'>{error || 'Click the search bar and type what you want to see'}</p>
             )
           }  
 

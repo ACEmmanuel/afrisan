@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+//This header belongs to the search page, i know it looks bad please bear with me
+
 
 // API call
 import { fetchName } from '../../../../api/api';
 
-const SearchBar = ({setSearchResults}) => {
+const SearchBar = ({setSearchResults, setError}) => {
 
-  const [search, setSearch] = useState('');
-  const [error, setError] = useState('');
+  // const [search, setSearch] = useState('');
+  // const [error, setError] = useState('');
 
   const terms = async (e) => {
     const value = e.target.value;
-    setSearch(value);
+    // setSearch(value);
 
     if (value) {
         try {
