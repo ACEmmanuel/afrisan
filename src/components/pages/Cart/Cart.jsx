@@ -17,7 +17,7 @@ const Cart = () => {
     return (
         <>
             <Header />
-            <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20 font-DM">
+            <section className="h-screen py-12 sm:py-16 lg:py-20 font-DM">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-center">
                         <h1 className="text-2xl font-semibold text-gray-900">Your Cart is Empty</h1>
@@ -30,7 +30,7 @@ const Cart = () => {
                                     <ul className="-my-8">
                                         <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                                             {items.length < 1 && (
-                                                <div className='text-sm font-semibold text-red-600 uppercase'>No Producct Has Been Added</div>
+                                                <div className='text-sm font-semibold text-red-600 uppercase'>No Product Has Been Added</div>
                                             )}
                                             <div>
                                                 {items.map((e) => {
@@ -78,7 +78,7 @@ const Cart = () => {
                                         
 
 
-                                        {/* <svg
+                                        <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="group-hover:ml-8 ml-4 h-6 w-6 transition-all"
                                             fill="none"
@@ -91,7 +91,7 @@ const Cart = () => {
                                                 strokeLinejoin="round"
                                                 d="M13 7l5 5m0 0l-5 5m5-5H6"
                                             />
-                                        </svg> */}
+                                        </svg>
                                     </button>
                                 </div>
                             </div>

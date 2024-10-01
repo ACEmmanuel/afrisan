@@ -12,7 +12,7 @@ const CartButton = ({value}) => {
   return (
     <>
       
-        <button className="w-full mt-6 px-10 py-5 bg-gray-900 text-white hover:bg-gray-800 rounded-full" 
+        <button className="w-full mt-6 px-10 py-4 bg-gray-900 text-white hover:bg-gray-800 rounded-md" 
         >
           {value}
         </button>

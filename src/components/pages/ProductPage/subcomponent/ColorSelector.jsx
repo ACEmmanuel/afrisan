@@ -11,8 +11,8 @@ const ColorSelector = () => {
 
   return (
     <>
-    <div className="mt-4">
-      <h3 className="font-semibold text-[16px] border-t pt-4">Select Colors</h3>
+    <div className="mt-2">
+      <h3 className="font-bold text-[0.9375rem] uppercase border-t border-[#F1F1F2] pt-4">Select Colors</h3>
       <div className="flex items-center mt-2">
         <div 
           className={`w-6 h-6 rounded-full bg-gray-800 cursor-pointer ${selectedColor === 'gray' ? 'ring-2 ring-gray-800' : ''}`} 

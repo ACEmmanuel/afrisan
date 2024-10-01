@@ -76,17 +76,17 @@ const SearchBar = () => {
           <div className='relative w-full cursor-pointer'>
             
             {/* Search Icon */}
-            <svg class="w-6 h-6 text-gray-300 absolute top-3 left-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-gray-300 absolute top-[0.8rem] left-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
             </svg>
 
             {/*Text Input */}
-            <input className={`hidden md:flex pl-12 pr-4 w-full rounded-full truncate text-gray-700 cursor-text text-[16px] leading-5 tracking-tight py-[0.8rem]  outline-none`} placeholder='Search products, brands and categories' onChange={searchingForProducts} ref={inputRef} />
+            <input className={`hidden md:flex pl-14 pr-[4rem] w-full rounded-full truncate text-gray-700 cursor-text text-[16px] leading-5 tracking-tight py-[1rem] outline-none`} placeholder='Search products, brands and categories' onChange={searchingForProducts} ref={inputRef} />
 
             <SearchArea searchResults={searchResults} error={error} />
             
             {/* Cancel button */}
-            <span className={`absolute top-2 right-4`} onClick={clearInput}>
+            <span className={`absolute top-3 right-4`} onClick={clearInput}>
               <svg class="w-7 h-7 text-gray-900 hover:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z" clip-rule="evenodd"/>
               </svg>
