@@ -6,7 +6,7 @@ const SearchArea = ({searchResults}) => {
 
   return (
     <>
-        <div className=" mx-auto absolute shadow-lg bg-white hidden md:flex mt-[0.3rem] w-full ">
+        <div className="mx-auto absolute shadow-lg bg-white hidden md:flex mt-[0.3rem] w-full rounded-tl-sm rounded-tr-3xl rounded-bl-3xl rounded-br-3xl">
             <div>
                 {
                 searchResults.length > 0 ? (

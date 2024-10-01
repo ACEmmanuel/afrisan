@@ -5,12 +5,12 @@ import SearchBar from '../../SearchBar'; //Mobile Screen search bar
 import DashboardSidebar from './subcomponents/DashboardSidebar';
 import Cart from '../../pages/Cart/Cart';
 
-// //Tablet and PC Screen search bar
+// Tablet and PC Screen search bar
 import LGSearchBar from './subcomponents/SearchBar'; 
 // import SearchArea from './subcomponents/SearchArea';
 
-
-import { Link } from 'react-router-dom';
+//Redux Toolkit
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
@@ -20,7 +20,9 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState({account: false, help: false});
   const [isDropdownOpenMobile, setIsDropdownOpenMobile] = useState({account: false, help: false});
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [totalQuantity, setTotalQuantity] = useState(0)
+  const [totalQuantity, setTotalQuantity] = useState(0);
+
+  const navigate = useNavigate();
 
   //Tablet and PC Screen States
   const [searchResults, setSearchResults] = useState([]);  // Store fetched products
@@ -38,6 +40,11 @@ const Header = () => {
   const mobileHelpRef = useRef();
 
   const w = 767;
+
+
+  const search = () => {
+    navigate('/search');
+  }
   
 
    // Update the cart total quantity from local storage
@@ -143,10 +150,19 @@ const Header = () => {
   
   }, [])
 
+
+
+
+
+
+
+
   
   return (
     <>
-        <header className='font-DM bg-orange-500 py-5 md:py-3 px-6 lg:px-10 relative text-slate-100 mb-1 z-10'>
+        <header className='font-DM bg-orange-500 py-5 md:py-2 px-6 lg:px-7 relative text-slate-100 mb-1 z-10'>
+
+
           <div className='mx-auto flex justify-between items-center gap-5'>
 
             {/* Menu Icon */}
@@ -164,16 +180,14 @@ const Header = () => {
 
             {/* Search Bar */}
               <LGSearchBar />
-            {/* <div className='relative w-full border'> */}
-              {/* <SearchArea searchResults={searchResults} error={error} /> */}
-            {/* </div> */}
+            
 
 
             <div className='gap-5 hidden md:flex'>
                 {/* Account */}
               <div className='relative' onClick={()=>dropDown('account')} ref={accountRef}>
                 <button className='flex items-center gap-1'>
-                  <span>Account</span>
+                  <span className='text-[0.9375rem]'>Account</span>
                   <svg className={`w-4 h-4 transition-transform transform ${isDropdownOpen.account ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -191,7 +205,7 @@ const Header = () => {
               {/* Help */}
               <div className='relative' onClick={()=>{dropDown('help')}} ref={helpRef}>
                 <button className='flex items-center gap-1'>
-                  <span>Help</span>
+                  <span className='text-[0.9375rem]'>Help</span>
                   <svg className={`w-4 h-4 transition-transform transform ${isDropdownOpen.help ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -205,25 +219,8 @@ const Header = () => {
                 )}
               </div>
 
-
-              
-            </div>
-            
-           
-            {/* Mobile Menu */}
-
-            {/*Account Icon, Cart Icon and Slide in Menu box*/}
-            <div className='flex gap-7'>
-
-              {/* Account Icon */}
-              <div>
-                <svg className='size-[1.3rem] md:hidden' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
-                </svg>
-              </div>
-
               {/* Cart Icon*/}
-              <Link to={'/cart'} className='relative'>
+              <Link to={'/cart'} className='relative hidden md:block'>
 
               {cart.items.length > 0 && (
 
@@ -234,7 +231,50 @@ const Header = () => {
               )}
 
               <div className={`text-white font-bold`}>
-                <svg className='size-[1.3rem] md:size-[1.4rem]' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <svg className='h-[1.3rem] w-[1.3rem] md:w-[1.4rem] md:h-[1.4rem]' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                </svg>
+              </div>
+              </Link>
+
+
+              
+            </div>
+            
+           
+            {/* Mobile Menu */}
+
+            {/*Account Icon, Cart Icon and Slide in Menu box*/}
+            <div className='flex gap-5'>
+
+              {/* Account Icon */}
+              <div>
+                <svg className='h-[1.3rem] w-[1.3rem] md:hidden' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
+                </svg>
+              </div>
+
+              {/* Search Icon */}
+              <div onClick={search}>
+                <svg class="h-[1.3rem] w-[1.3rem] md:hidden text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                </svg>
+              </div>
+
+
+              {/* Cart Icon*/}
+              <Link to={'/cart'} className='relative md:hidden'>
+
+              {cart.items.length > 0 && (
+
+                <span className='absolute text-white font-bold text-[10px] bg-red-600 rounded-full h-4 w-4 flex items-center justify-center top-[-5px] right-[-5px]'>
+                  {cart.totalQuantity}
+                </span>
+
+              )}
+
+              <div className={`text-white font-bold`}>
+                <svg className='h-[1.3rem] w-[1.3rem] md:w-[1.4rem] md:h-[1.4rem]' fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                   <path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
                 </svg>
               </div>
@@ -271,7 +311,7 @@ const Header = () => {
         </header>
         
          {/* Search Bar */}
-         <SearchBar size="block md:hidden" width="100%" input="text-[14px] leading-5 tracking-tight py-3" />
+         {/* <SearchBar size="block md:hidden" width="100%" input="text-[14px] leading-5 tracking-tight py-3" /> */}
 
 
         
