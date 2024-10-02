@@ -1,13 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react'
 //This header belongs to the home page, i know it looks bad please bear with me 
+//Update: I don't know what is going on, but it works. Only touch this code if you know what you're doing
+//Update: God help me 😭
 
+import React, {useEffect, useRef, useState} from 'react'
+
+// Components
 import SearchBar from '../../SearchBar'; //Mobile Screen search bar
 import DashboardSidebar from './subcomponents/DashboardSidebar';
 import Cart from '../../pages/Cart/Cart';
 
 // Tablet and PC Screen search bar
 import LGSearchBar from './subcomponents/SearchBar'; 
-// import SearchArea from './subcomponents/SearchArea';
 
 //Redux Toolkit
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,18 +20,20 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
 
+  // My states
   const [isDropdownOpen, setIsDropdownOpen] = useState({account: false, help: false});
   const [isDropdownOpenMobile, setIsDropdownOpenMobile] = useState({account: false, help: false});
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [totalQuantity, setTotalQuantity] = useState(0);
 
+  // Redux Toolkit
   const navigate = useNavigate();
+  const cart = useSelector((state)=> state.cart);
 
   //Tablet and PC Screen States
   const [searchResults, setSearchResults] = useState([]);  // Store fetched products
   const [error, setError] = useState('');  // Store error messages
 
-  const cart = useSelector((state)=> state.cart);
 
   // Larger Screens
   const accountRef = useRef();
@@ -83,14 +88,6 @@ const Header = () => {
     })
   }
   
-  // MOBILE FUNCTION
-  const dropDownMobile = (drop) => {
-    setIsDropdownOpenMobile((prev)=>{
-      return {...prev, 
-        [drop]: !prev[drop]
-      }
-    })
-  }
 
   const openMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -175,7 +172,7 @@ const Header = () => {
               </div>
 
             {/* Logo */}
-            <div className="text-[1.5rem] tracking- leading-5 font-medium">Afrisan</div>
+            <div className="text-[1.5rem] tracking- leading-5 font-medium cursor-pointer" onClick={()=>navigate('/')}>Afrisan</div>
 
 
             {/* Search Bar */}
@@ -309,63 +306,10 @@ const Header = () => {
 
           </div>
         </header>
-        
-         {/* Search Bar */}
-         {/* <SearchBar size="block md:hidden" width="100%" input="text-[14px] leading-5 tracking-tight py-3" /> */}
-
-
-        
+       
         
     </>
   )
 }
 
 export default Header;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {/* Account */}
-// <div className='relative text-[20px] font-bold mt-5' onClick={()=>dropDownMobile('account')} ref={mobileAccountRef}>
-// <button className='flex items-center gap-1'>
-//   <span>Account</span>
-//   <svg className={`w-4 h-4 transition-transform transform ${isDropdownOpenMobile.account ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-//     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-//   </svg>
-// </button>
-// {isDropdownOpenMobile.account && (
-// <div className="relative right-0 mt-0 w-full rounded py-2 transition-opacity duration-1000 opacity-100 text-[18px] font-medium text-slate-100">
-//   <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Profile</a>
-//   <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Settings</a>
-//   <a href="#" className="block py-2 hover:bg-[#efefef] px-4">Logout</a>
-// </div>
-// )}
-// </div>
-
-// {/* Help */}
-// <div className='relative text-[20px] font-bold' onClick={()=>{dropDownMobile('help')}} ref={mobileHelpRef}>
-// <button className='flex items-center gap-1'>
-//   <span>Help</span>
-//   <svg className={`w-4 h-4 transition-transform transform ${isDropdownOpenMobile.help ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-//     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-//   </svg>
-// </button>
-// {isDropdownOpenMobile.help && (
-// <div className="relative right-0 mt-2 w-full rounded py-2 transition-opacity duration-300 opacity-100 text-[18px] font-medium text-slate-100">
-// <a href="#" className="block px-4 py-2 hover:hover:bg-[#efefef]">FAQ</a>
-// <a href="#" className="block px-4 py-2 hover:hover:bg-[#efefef]">Contact Support</a>
-// </div>
-// )}
-// </div>

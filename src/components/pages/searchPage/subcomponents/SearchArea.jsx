@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const SearchArea = ({searchResults, error}) => {
   return (
     <>
-        <div className="mt-2 container mx-auto p-2">
+        <div className="mt-2 container mx-auto p-2 font-DM">
 
           {
             searchResults.length > 0 ? (
@@ -22,7 +22,7 @@ const SearchArea = ({searchResults, error}) => {
                 </Link>
             )
             ) : (
-                <p className='text-black-600 text-center mt-10'>{error || 'Click the search bar and type what you want to see'}</p>
+                <p className='text-black-600 text-center mt-10 font-medium'>{error || 'Click the search bar and type what you want to see'}</p>
             )
           }  
 
