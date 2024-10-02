@@ -19,7 +19,7 @@ const SearchHeader = () => {
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
                 </svg>
             </span>
-            <span className='text-[1.25rem] mr-[40%] font-bold'>Afrisan</span>
+            <span className='text-[1.25rem] mr-[40%] font-bold cursor-pointer' onClick={()=> navigate('/')}>Afrisan</span>
 
         </div>
     </>
